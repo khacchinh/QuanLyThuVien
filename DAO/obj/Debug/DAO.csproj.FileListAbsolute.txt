@@ -1,0 +1,12 @@
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\DAO\bin\Debug\DAO.dll
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\DAO\bin\Debug\DAO.pdb
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\DAO\obj\Debug\DAO.dll
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\DAO\obj\Debug\DAO.pdb
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\DAO\bin\Debug\DAO.dll.config
+E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\DAO\bin\Debug\DAO.dll.config
+E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\DAO\bin\Debug\DAO.dll
+E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\DAO\bin\Debug\DAO.pdb
+E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
+E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\DAO\obj\Debug\DAO.dll
+E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\DAO\obj\Debug\DAO.pdb
