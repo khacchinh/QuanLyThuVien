@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO;
 
 namespace QuanLyThuVien
 {
     public partial class frmMain : Form
     {
-
+        static public NHANVIEN nhanvien = new NHANVIEN();
         public frmMain()
         {
             this.DoubleBuffered = true;

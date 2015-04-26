@@ -109,6 +109,12 @@
             this.m_txtKQ = new System.Windows.Forms.TextBox();
             this.m_txtKT = new System.Windows.Forms.TextBox();
             this.m_dgvKT = new System.Windows.Forms.DataGridView();
+            this.label30 = new System.Windows.Forms.Label();
+            this.m_lblMaNV = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.m_lblTenNV = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.m_lblChucVu = new System.Windows.Forms.Label();
             this.m_tpMainQuanLy.SuspendLayout();
             this.m_tpCTPM.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -206,6 +212,7 @@
             this.m_dtpPMNgayMuon.Name = "m_dtpPMNgayMuon";
             this.m_dtpPMNgayMuon.Size = new System.Drawing.Size(173, 22);
             this.m_dtpPMNgayMuon.TabIndex = 2;
+            this.m_dtpPMNgayMuon.ValueChanged += new System.EventHandler(this.m_dtpPMNgayMuon_ValueChanged);
             // 
             // m_btnPMSua
             // 
@@ -961,11 +968,71 @@
             this.m_dgvKT.TabIndex = 0;
             this.m_dgvKT.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.m_dgvKT_CellClick);
             // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(11, 626);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(97, 17);
+            this.label30.TabIndex = 1;
+            this.label30.Text = "Mã nhân viên:";
+            // 
+            // m_lblMaNV
+            // 
+            this.m_lblMaNV.AutoSize = true;
+            this.m_lblMaNV.Location = new System.Drawing.Point(114, 626);
+            this.m_lblMaNV.Name = "m_lblMaNV";
+            this.m_lblMaNV.Size = new System.Drawing.Size(43, 17);
+            this.m_lblMaNV.TabIndex = 1;
+            this.m_lblMaNV.Text = "demo";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(186, 626);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(103, 17);
+            this.label32.TabIndex = 1;
+            this.label32.Text = "Tên nhân viên:";
+            // 
+            // m_lblTenNV
+            // 
+            this.m_lblTenNV.AutoSize = true;
+            this.m_lblTenNV.Location = new System.Drawing.Point(294, 626);
+            this.m_lblTenNV.Name = "m_lblTenNV";
+            this.m_lblTenNV.Size = new System.Drawing.Size(43, 17);
+            this.m_lblTenNV.TabIndex = 1;
+            this.m_lblTenNV.Text = "demo";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(482, 626);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(63, 17);
+            this.label34.TabIndex = 1;
+            this.label34.Text = "Chức vụ:";
+            // 
+            // m_lblChucVu
+            // 
+            this.m_lblChucVu.AutoSize = true;
+            this.m_lblChucVu.Location = new System.Drawing.Point(551, 626);
+            this.m_lblChucVu.Name = "m_lblChucVu";
+            this.m_lblChucVu.Size = new System.Drawing.Size(43, 17);
+            this.m_lblChucVu.TabIndex = 1;
+            this.m_lblChucVu.Text = "demo";
+            // 
             // frmQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1070, 648);
+            this.Controls.Add(this.label32);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.m_lblChucVu);
+            this.Controls.Add(this.m_lblTenNV);
+            this.Controls.Add(this.m_lblMaNV);
+            this.Controls.Add(this.label30);
             this.Controls.Add(this.m_tpMainQuanLy);
             this.Name = "frmQuanLy";
             this.Text = "Quản Lý";
@@ -987,6 +1054,7 @@
             this.m_tpKTSSCT.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dgvKT)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1073,5 +1141,11 @@
         private System.Windows.Forms.DateTimePicker m_dtpPTNgayTra;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button m_btnPTQD;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label m_lblMaNV;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label m_lblTenNV;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label m_lblChucVu;
     }
 }

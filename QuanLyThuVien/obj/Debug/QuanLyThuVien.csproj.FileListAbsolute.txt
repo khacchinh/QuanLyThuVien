@@ -41,3 +41,4 @@ E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\obj\Debug\
 E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmTraCuu.resources
 E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
 E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangKy.resources

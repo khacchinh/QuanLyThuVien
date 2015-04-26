@@ -41,6 +41,10 @@ namespace QuanLyThuVien
             LoadDuLieuPhieuMuon();
             LoadDuLieuQuaTrinhMuon();
             LoadDuLieuKT();
+            LoadDate();
+            m_lblMaNV.Text = frmMain.nhanvien.MANV;
+            m_lblTenNV.Text = frmMain.nhanvien.TENNV;
+            m_lblChucVu.Text = frmMain.nhanvien.CHUCVU;
         }
         private void LoadDuLieuDK(DataGridViewRow row)
         {
@@ -204,6 +208,7 @@ namespace QuanLyThuVien
             m_txtPMTenSach.Text = "";
             m_dtpPMNgayMuon.Text = "";
             m_dtpPMNgayTra.Text = "";
+            LoadDate();
         }
         private void m_btnPMSua_Click(object sender, EventArgs e)
         {
@@ -279,6 +284,7 @@ namespace QuanLyThuVien
         private void m_tpCTPM_Click(object sender, EventArgs e)
         {
             LoadDuLieuPhieuMuon();
+            LoadDate();
         }
 
         /// <summary>
@@ -385,12 +391,12 @@ namespace QuanLyThuVien
             m_txtPTMaSach.Text = "";
             m_txtPTTenSach.Text = "";
             m_dtpPTNgayMuon.Text = "";
-            m_dtpPTNgayHenTra.Text = "";
             m_dtpPTNgayTra.Text = "";
             m_txtPTsoNgayTre.Text = "";
             m_txtPTTienPhat.Text = "";
             m_rtbPTLyDo.Text = "";
             LoadDuLieuQuaTrinhMuon();
+            LoadDate();
         }
         /// <summary>
         /// tab kiem tra
@@ -602,6 +608,17 @@ namespace QuanLyThuVien
             {
                 e.Handled = true;
             }
+        }
+
+        private void m_dtpPMNgayMuon_ValueChanged(object sender, EventArgs e)
+        {
+            LoadDate();
+        }
+        private void LoadDate()
+        {
+            DateTime dt = DateTime.Parse(m_dtpPMNgayMuon.Text);
+            dt = dt.AddDays(5);
+            m_dtpPMNgayTra.Text = dt.ToString();
         }
 
        

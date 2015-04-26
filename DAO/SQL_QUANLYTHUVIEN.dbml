@@ -39,6 +39,7 @@
       <Column Name="SOTRANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MANXB" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
       <Column Name="SOTIEN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DAUSACH_DANGKY" Member="DANGKies" ThisKey="MASACH" OtherKey="MASACH" Type="DANGKY" />
       <Association Name="DAUSACH_MUONSACH" Member="MUONSACHes" ThisKey="MASACH" OtherKey="MASACH" Type="MUONSACH" />
       <Association Name="DAUSACH_QUATRINHMUON" Member="QUATRINHMUONs" ThisKey="MASACH" OtherKey="MASACH" Type="QUATRINHMUON" />
@@ -102,6 +103,7 @@
       <Column Name="NGAYMUON" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
       <Association Name="DOCGIA_MUONSACH" Member="DOCGIA" ThisKey="MADG" OtherKey="MADG" Type="DOCGIA" IsForeignKey="true" />
       <Association Name="DAUSACH_MUONSACH" Member="DAUSACH" ThisKey="MASACH" OtherKey="MASACH" Type="DAUSACH" IsForeignKey="true" />
     </Type>
@@ -111,6 +113,17 @@
       <Column Name="MANGONNGU" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENNGONNGU" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Association Name="NGONNGU_DAUSACH" Member="DAUSACHes" ThisKey="MANGONNGU" OtherKey="MANGONNGU" Type="DAUSACH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHANVIEN" Member="NHANVIENs">
+    <Type Name="NHANVIEN">
+      <Column Name="MANV" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENNV" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="CHUCVU" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PASS" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="NHANVIEN_USER_LOG" Member="USER_LOG" ThisKey="MANV" OtherKey="ID" Type="USER_LOG" Cardinality="One" />
     </Type>
   </Table>
   <Table Name="dbo.NXB" Member="NXBs">
@@ -147,8 +160,17 @@
       <Column Name="TIENPHAT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="NGAYPHAT" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="TRANGTHAI" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Association Name="DAUSACH_QUATRINHMUON" Member="DAUSACH" ThisKey="MASACH" OtherKey="MASACH" Type="DAUSACH" IsForeignKey="true" />
       <Association Name="DOCGIA_QUATRINHMUON" Member="DOCGIA" ThisKey="MADG" OtherKey="MADG" Type="DOCGIA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUIDINH" Member="QUIDINHs">
+    <Type Name="QUIDINH">
+      <Column Name="MAQUIDINH" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENQUIDINH" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MUCPHAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SOTIEN" Type="System.Double" DbType="Float" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.TACGIA" Member="TACGIAs">
@@ -168,23 +190,7 @@
       <Column Name="ID" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="LOGIN_LOG" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="LOOUT_LOG" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Association Name="USER_USER_LOG" Member="USER" ThisKey="ID" OtherKey="ID" Type="USER" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.USERS" Member="USERs">
-    <Type Name="USER">
-      <Column Name="ID" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PASS" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Association Name="USER_USER_LOG" Member="USER_LOG" ThisKey="ID" OtherKey="ID" Type="USER_LOG" Cardinality="One" />
-    </Type>
-  </Table>
-  <Table Name="dbo.QUIDINH" Member="QUIDINHs">
-    <Type Name="QUIDINH">
-      <Column Name="MAQUIDINH" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TENQUIDINH" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="MUCPHAT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SOTIEN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="NHANVIEN_USER_LOG" Member="NHANVIEN" ThisKey="ID" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
   </Table>
   <Function Name="dbo.sp_LayDuLieuMuonSach" Method="sp_LayDuLieuMuonSach">
