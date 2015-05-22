@@ -14,17 +14,19 @@ namespace QuanLyThuVien
 {
     public partial class frmDangKy : Form
     {
+        static public DAUSACH dausach = new DAUSACH();
         private DangKy_BUS dk = new DangKy_BUS();
         private DANGKY dangky = new DANGKY();
         public frmDangKy()
         {
             InitializeComponent();
-
         }
 
         private void LoadDuLieuDangKy()
         {
             m_dgvDK.DataSource = dk.LoadDuLieuDangKy();
+            if(dausach.MASACH!=null)
+                m_txtMaTL.Text = dausach.MASACH;
         }
 
         private void m_btnThem_Click(object sender, EventArgs e)

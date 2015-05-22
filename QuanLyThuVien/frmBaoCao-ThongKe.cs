@@ -151,6 +151,16 @@ namespace QuanLyThuVien
             PrintData(m_dgvQuaHan);
         }
 
+        private void m_dtpQHTuNgay_ValueChanged(object sender, EventArgs e)
+        {
+            m_dgvQuaHan.DataSource = bc_tk.LoadDuLieuDocGiaQuaHan(1, DateTime.Parse(m_dtpQHTuNgay.Text), DateTime.Parse(m_drpQHDenNgay.Text));
+        }
+
+        private void m_drpQHDenNgay_ValueChanged(object sender, EventArgs e)
+        {
+            m_dgvQuaHan.DataSource = bc_tk.LoadDuLieuDocGiaQuaHan(1, DateTime.Parse(m_dtpQHTuNgay.Text), DateTime.Parse(m_drpQHDenNgay.Text));
+        }
+
         
 
     }

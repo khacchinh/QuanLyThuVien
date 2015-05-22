@@ -83,6 +83,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.m_tpTheLoai = new System.Windows.Forms.TabPage();
+            this.label21 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -102,8 +103,10 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.m_tpTG = new System.Windows.Forms.TabPage();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.label34 = new System.Windows.Forms.Label();
@@ -123,9 +126,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.m_tpDG = new System.Windows.Forms.TabPage();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.m_tpSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -139,47 +139,6 @@
             this.m_tpTG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-
-            this.m_tpTheLoai = new System.Windows.Forms.TabPage();
-            this.m_tpTG = new System.Windows.Forms.TabPage();
-            this.m_tpDG = new System.Windows.Forms.TabPage();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.m_tpSach.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.m_tpNXB.SuspendLayout();
-            this.m_tpTheLoai.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-
             this.SuspendLayout();
             // 
             // tabControl1
@@ -224,7 +183,6 @@
             this.m_tpSach.Padding = new System.Windows.Forms.Padding(3);
             this.m_tpSach.Size = new System.Drawing.Size(951, 490);
             this.m_tpSach.TabIndex = 0;
-
             this.m_tpSach.Text = "Sách";
             this.m_tpSach.UseVisualStyleBackColor = true;
             // 
@@ -272,10 +230,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(955, 216);
             this.dataGridView1.TabIndex = 5;
-            // 
-
-            this.m_tpSach.Text = "NXB";
-            this.m_tpSach.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -330,7 +284,6 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "Mã vị trí:";
             // 
-
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(86, 137);
@@ -530,7 +483,6 @@
             this.m_tpNXB.Text = "NXB";
             this.m_tpNXB.UseVisualStyleBackColor = true;
             // 
-
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(488, 220);
@@ -656,139 +608,7 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(63, 17);
             this.label19.TabIndex = 0;
-            this.label19.Text = "Website:";            // m_tpTheLoai
-            // 
-            this.m_tpTheLoai.Controls.Add(this.label21);
-            this.m_tpTheLoai.Location = new System.Drawing.Point(4, 25);
-            this.m_tpTheLoai.Name = "m_tpTheLoai";
-            this.m_tpTheLoai.Size = new System.Drawing.Size(951, 490);
-            this.m_tpTheLoai.TabIndex = 2;
-            this.m_tpTheLoai.Text = "Thể Loại";
-            this.m_tpTheLoai.UseVisualStyleBackColor = true;
-            // 
-            // m_tpTG
-            // 
-            this.m_tpTG.Location = new System.Drawing.Point(4, 25);
-            this.m_tpTG.Name = "m_tpTG";
-            this.m_tpTG.Size = new System.Drawing.Size(951, 490);
-            this.m_tpTG.TabIndex = 3;
-            this.m_tpTG.Text = "Tác Giả";
-            this.m_tpTG.UseVisualStyleBackColor = true;
-            // 
-            // m_tpDG
-            // 
-            this.m_tpDG.Location = new System.Drawing.Point(4, 25);
-            this.m_tpDG.Name = "m_tpDG";
-            this.m_tpDG.Size = new System.Drawing.Size(951, 490);
-            this.m_tpDG.TabIndex = 4;
-            this.m_tpDG.Text = "Đọc Giả";
-            this.m_tpDG.UseVisualStyleBackColor = true;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(86, 100);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(175, 29);
-            this.textBox7.TabIndex = 2;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(86, 137);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(175, 29);
-            this.textBox9.TabIndex = 2;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 278);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(955, 216);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(28, 202);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 52);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(174, 202);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 52);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(318, 202);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 52);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(454, 202);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 52);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Xóa";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(33, 35);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(63, 17);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Mã NXB:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 79);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(69, 17);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Tên NXB:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(41, 123);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(55, 17);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Địa chỉ:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(20, 172);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(76, 17);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Điện thoại:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(344, 35);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(38, 17);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "FAX:";
+            this.label19.Text = "Website:";
             // 
             // label18
             // 
@@ -799,7 +619,6 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Email:";
             // 
-
             // label17
             // 
             this.label17.AutoSize = true;
@@ -869,6 +688,15 @@
             this.m_tpTheLoai.TabIndex = 2;
             this.m_tpTheLoai.Text = "Thể Loại";
             this.m_tpTheLoai.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(47, 40);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(81, 17);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Mã thể loại:";
             // 
             // radioButton2
             // 
@@ -1044,15 +872,6 @@
             this.label22.TabIndex = 0;
             this.label22.Text = "Tên thể loại:";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(77, 43);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(81, 17);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Mã thể loại:";
-            // 
             // m_tpTG
             // 
             this.m_tpTG.Controls.Add(this.button16);
@@ -1082,6 +901,33 @@
             this.m_tpTG.TabIndex = 3;
             this.m_tpTG.Text = "Tác Giả";
             this.m_tpTG.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(450, 234);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(120, 52);
+            this.button16.TabIndex = 6;
+            this.button16.Text = "Xóa";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(314, 234);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(120, 52);
+            this.button15.TabIndex = 6;
+            this.button15.Text = "Sửa";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(178, 234);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(120, 52);
+            this.button14.TabIndex = 6;
+            this.button14.Text = "Lưu";
+            this.button14.UseVisualStyleBackColor = true;
             // 
             // button13
             // 
@@ -1246,168 +1092,6 @@
             this.m_tpDG.Text = "Đọc Giả";
             this.m_tpDG.UseVisualStyleBackColor = true;
             // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(178, 234);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(120, 52);
-            this.button14.TabIndex = 6;
-            this.button14.Text = "Lưu";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(314, 234);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(120, 52);
-            this.button15.TabIndex = 6;
-            this.button15.Text = "Sửa";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(450, 234);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(120, 52);
-            this.button16.TabIndex = 6;
-            this.button16.Text = "Xóa";
-            this.button16.UseVisualStyleBackColor = true;
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(319, 123);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 17);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Website:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(595, 35);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 17);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Ghi chú:";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(102, 20);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(178, 32);
-            this.textBox10.TabIndex = 1;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(102, 65);
-            this.textBox11.Multiline = true;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(178, 32);
-            this.textBox11.TabIndex = 1;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(102, 107);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(178, 32);
-            this.textBox12.TabIndex = 1;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(102, 158);
-            this.textBox13.Multiline = true;
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(178, 32);
-            this.textBox13.TabIndex = 1;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(388, 20);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(178, 32);
-            this.textBox14.TabIndex = 1;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(388, 67);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(178, 32);
-            this.textBox15.TabIndex = 1;
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(388, 109);
-            this.textBox16.Multiline = true;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(178, 32);
-            this.textBox16.TabIndex = 1;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(684, 20);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(205, 79);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 295);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(951, 192);
-            this.dataGridView2.TabIndex = 3;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(44, 220);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 52);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Thêm";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(191, 220);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 52);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Lưu";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(339, 220);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(120, 52);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Sửa";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(488, 220);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(120, 52);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "Xóa";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(47, 40);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(81, 17);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Mã thể loại:";
-            // 
             // frmCapNhat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1419,13 +1103,11 @@
             this.tabControl1.ResumeLayout(false);
             this.m_tpSach.ResumeLayout(false);
             this.m_tpSach.PerformLayout();
-
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.m_tpNXB.ResumeLayout(false);
             this.m_tpNXB.PerformLayout();
-
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.m_tpTheLoai.ResumeLayout(false);
             this.m_tpTheLoai.PerformLayout();
@@ -1437,10 +1119,6 @@
             this.m_tpTG.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.m_tpTheLoai.ResumeLayout(false);
-            this.m_tpTheLoai.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

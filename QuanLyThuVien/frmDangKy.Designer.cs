@@ -55,6 +55,7 @@
             // 
             this.m_dgvDK.AllowUserToAddRows = false;
             this.m_dgvDK.AllowUserToDeleteRows = false;
+            this.m_dgvDK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.m_dgvDK.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.m_dgvDK.Location = new System.Drawing.Point(1, 280);
             this.m_dgvDK.Name = "m_dgvDK";
@@ -118,6 +119,7 @@
             this.m_txtTenDG.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txtTenDG.Location = new System.Drawing.Point(146, 124);
             this.m_txtTenDG.Name = "m_txtTenDG";
+            this.m_txtTenDG.ReadOnly = true;
             this.m_txtTenDG.Size = new System.Drawing.Size(217, 32);
             this.m_txtTenDG.TabIndex = 2;
             // 
@@ -155,6 +157,7 @@
             this.m_txtTenTL.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_txtTenTL.Location = new System.Drawing.Point(646, 58);
             this.m_txtTenTL.Name = "m_txtTenTL";
+            this.m_txtTenTL.ReadOnly = true;
             this.m_txtTenTL.Size = new System.Drawing.Size(217, 32);
             this.m_txtTenTL.TabIndex = 2;
             // 

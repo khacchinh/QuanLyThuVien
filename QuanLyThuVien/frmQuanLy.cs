@@ -110,6 +110,21 @@ namespace QuanLyThuVien
             m_dtpPTNgayMuon.Enabled = true;
             m_cbbPTHH.Enabled = true;
         }
+
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    this.Invalidate();
+                    return;
+            }
+            base.WndProc(ref m);
+        }
         #endregion
 
         #region Các sự kiên click chuột
@@ -619,6 +634,16 @@ namespace QuanLyThuVien
             DateTime dt = DateTime.Parse(m_dtpPMNgayMuon.Text);
             dt = dt.AddDays(5);
             m_dtpPMNgayTra.Text = dt.ToString();
+        }
+
+        private void m_btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
 
        

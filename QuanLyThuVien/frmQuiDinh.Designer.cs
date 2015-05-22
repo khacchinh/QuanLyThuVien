@@ -30,6 +30,7 @@
         {
             this.m_dgvQD = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.m_btnSuaQuiDinh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.m_dgvQD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,11 +53,21 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Qui định lập phiếu phạt khi nhận sách";
             // 
+            // m_btnSuaQuiDinh
+            // 
+            this.m_btnSuaQuiDinh.Location = new System.Drawing.Point(497, 322);
+            this.m_btnSuaQuiDinh.Name = "m_btnSuaQuiDinh";
+            this.m_btnSuaQuiDinh.Size = new System.Drawing.Size(75, 23);
+            this.m_btnSuaQuiDinh.TabIndex = 2;
+            this.m_btnSuaQuiDinh.Text = "Sửa đổi";
+            this.m_btnSuaQuiDinh.UseVisualStyleBackColor = true;
+            // 
             // frmQuiDinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 308);
+            this.ClientSize = new System.Drawing.Size(589, 355);
+            this.Controls.Add(this.m_btnSuaQuiDinh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.m_dgvQD);
             this.MaximizeBox = false;
@@ -72,5 +83,6 @@
 
         private System.Windows.Forms.DataGridView m_dgvQD;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button m_btnSuaQuiDinh;
     }
 }

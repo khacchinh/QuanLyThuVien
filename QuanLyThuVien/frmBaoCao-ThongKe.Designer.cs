@@ -239,6 +239,7 @@
             this.m_drpQHDenNgay.Name = "m_drpQHDenNgay";
             this.m_drpQHDenNgay.Size = new System.Drawing.Size(174, 22);
             this.m_drpQHDenNgay.TabIndex = 4;
+            this.m_drpQHDenNgay.ValueChanged += new System.EventHandler(this.m_drpQHDenNgay_ValueChanged);
             // 
             // m_dtpQHTuNgay
             // 
@@ -246,6 +247,7 @@
             this.m_dtpQHTuNgay.Name = "m_dtpQHTuNgay";
             this.m_dtpQHTuNgay.Size = new System.Drawing.Size(174, 22);
             this.m_dtpQHTuNgay.TabIndex = 4;
+            this.m_dtpQHTuNgay.ValueChanged += new System.EventHandler(this.m_dtpQHTuNgay_ValueChanged);
             // 
             // m_btnQHExcel
             // 

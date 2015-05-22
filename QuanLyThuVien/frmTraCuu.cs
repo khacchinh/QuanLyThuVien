@@ -18,41 +18,54 @@ namespace QuanLyThuVien
         {
             InitializeComponent();
         }
-
-        private void m_txtTLSeach_TextChanged(object sender, EventArgs e)
+        protected override void WndProc(ref Message m)
         {
-            if (m_cbbTraCuuTL.SelectedItem == null || m_txtTLSeach.Text =="") return;
-            switch (m_cbbTraCuuTL.SelectedItem.ToString())
+            switch (m.Msg)
             {
-                case "Mã tài liệu":
-                    m_dgvTL.DataSource = tc.TraCuuTLtheoMaSach(m_txtTLSeach.Text);
-                    break;
+                case 0x84:
+                    base.WndProc(ref m);
 
-                case "Tên tài liệu":
-                    m_dgvTL.DataSource = tc.TraCuuTLtheoTenSach(m_txtTLSeach.Text);
-                    break;
-
-                case "Thể loại":
-                    m_dgvTL.DataSource = tc.TraCuuTLtheoTentheNXB(m_txtTLSeach.Text);
-                    break;
-
-                case "NXB":
-                    m_dgvTL.DataSource = tc.TraCuuTLtheoTentheNXB(m_txtTLSeach.Text);
-                    break;
-
-                case "Tác giả":
-                    m_dgvTL.DataSource = tc.TraCuuTLtheoTenTG(m_txtTLSeach.Text);
-                    break;
-
-                default:
-                    m_dgvTL.DataSource = null;
-                    break;
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    this.Invalidate();
+                    return;
             }
-                                
+            base.WndProc(ref m);
         }
 
-        private void m_txtDGSeach_TextChanged(object sender, EventArgs e)
+       
+
+        private void m_btnTLDangKy_Click(object sender, EventArgs e)
         {
+            if(m_dgvTL.DataSource!=null)
+                frmDangKy.dausach.MASACH = m_dgvTL.SelectedRows[0].Cells["MASACH"].Value.ToString();
+            frmDangKy frmdangky = new frmDangKy();
+            frmdangky.ShowDialog();
+        }
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (m_cbbDG.SelectedItem.ToString() != "MSSV" && m_cbbDG.SelectedItem.ToString() != "Mã giảng viên")
+                return;
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void m_btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void m_btnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void m_btnDGTraCuu_Click(object sender, EventArgs e)
+        {
+
             if (m_cbbDG.SelectedItem == null || m_txtDGSeach.Text == "") return;
             switch (m_cbbDG.SelectedItem.ToString())
             {
@@ -80,22 +93,36 @@ namespace QuanLyThuVien
                     m_dgvDG.DataSource = null;
                     break;
             }
-                                
         }
 
-        private void m_btnTLDangKy_Click(object sender, EventArgs e)
+        private void m_btnTLTraCuu_Click(object sender, EventArgs e)
         {
-            frmDangKy frmdangky = new frmDangKy();
-            frmdangky.ShowDialog();
-        }
-
-        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (m_cbbDG.SelectedItem.ToString() != "MSSV" && m_cbbDG.SelectedItem.ToString() != "Mã giảng viên")
-                return;
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            if (m_cbbTraCuuTL.SelectedItem == null || m_txtTLSeach.Text == "") return;
+            switch (m_cbbTraCuuTL.SelectedItem.ToString())
             {
-                e.Handled = true;
+                case "Mã tài liệu":
+                    m_dgvTL.DataSource = tc.TraCuuTLtheoMaSach(m_txtTLSeach.Text);
+                    break;
+
+                case "Tên tài liệu":
+                    m_dgvTL.DataSource = tc.TraCuuTLtheoTenSach(m_txtTLSeach.Text);
+                    break;
+
+                case "Thể loại":
+                    m_dgvTL.DataSource = tc.TraCuuTLtheoTentheNXB(m_txtTLSeach.Text);
+                    break;
+
+                case "NXB":
+                    m_dgvTL.DataSource = tc.TraCuuTLtheoTentheNXB(m_txtTLSeach.Text);
+                    break;
+
+                case "Tác giả":
+                    m_dgvTL.DataSource = tc.TraCuuTLtheoTenTG(m_txtTLSeach.Text);
+                    break;
+
+                default:
+                    m_dgvTL.DataSource = null;
+                    break;
             }
         }
     }
