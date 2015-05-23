@@ -645,25 +645,5 @@ namespace QuanLyThuVien
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-       
-
-        
-
-       
-
-        
-
-        
-
-        
-
-        
-
-
-       
-
-
-
     }
 }
