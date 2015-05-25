@@ -57,18 +57,21 @@ namespace QuanLyThuVien
             frm_capnhat.ShowDialog();
         }
 
-        private void m_btnAbout_Click(object sender, EventArgs e)
+        private void m_btnMin_Click_1(object sender, EventArgs e)
         {
-            frmAbout frm_about = new frmAbout();
-            frm_about.ShowDialog();
+            this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void m_btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
+        private void label1_Click(object sender, EventArgs e)
+        {
+            frmAbout frm_about = new frmAbout();
+            frm_about.ShowDialog();
+        }
 
     }
 }
