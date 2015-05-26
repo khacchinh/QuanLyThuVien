@@ -1,19 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SQL_QUANYTHUVIEN" Class="SQL_QUANLYTHUVIENDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=XARALETO;Initial Catalog=SQL_QUANYTHUVIEN;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="SQL_QUANYTHUVIENConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HP;Initial Catalog=SQL_QUANYTHUVIEN;Integrated Security=True" SettingsObjectName="DAO.Properties.Settings" SettingsPropertyName="SQL_QUANYTHUVIENConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CHUYENMUC" Member="CHUYENMUCs">
     <Type Name="CHUYENMUC">
       <Column Name="MACHUYENMUC" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENCHUYENMUC" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Association Name="CHUYENMUC_PHANLOAISACH" Member="PHANLOAISACHes" ThisKey="MACHUYENMUC" OtherKey="MACHUYENMUC" Type="PHANLOAISACH" />
-    </Type>
-  </Table>
-  <Table Name="dbo.VITRI" Member="VITRIs">
-    <Type Name="VITRI">
-      <Column Name="MAVITRI" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="KHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="KE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="NGAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="VITRI_DAUSACH" Member="DAUSACHes" ThisKey="MAVITRI" OtherKey="MAVITRI" Type="DAUSACH" />
     </Type>
   </Table>
   <Table Name="dbo.DANGKY" Member="DANGKies">
@@ -43,11 +34,11 @@
       <Association Name="DAUSACH_DANGKY" Member="DANGKies" ThisKey="MASACH" OtherKey="MASACH" Type="DANGKY" />
       <Association Name="DAUSACH_MUONSACH" Member="MUONSACHes" ThisKey="MASACH" OtherKey="MASACH" Type="MUONSACH" />
       <Association Name="DAUSACH_QUATRINHMUON" Member="QUATRINHMUONs" ThisKey="MASACH" OtherKey="MASACH" Type="QUATRINHMUON" />
-      <Association Name="VITRI_DAUSACH" Member="VITRI" ThisKey="MAVITRI" OtherKey="MAVITRI" Type="VITRI" IsForeignKey="true" />
       <Association Name="NGONNGU_DAUSACH" Member="NGONNGU" ThisKey="MANGONNGU" OtherKey="MANGONNGU" Type="NGONNGU" IsForeignKey="true" />
       <Association Name="NXB_DAUSACH" Member="NXB" ThisKey="MANXB" OtherKey="MANXB" Type="NXB" IsForeignKey="true" />
       <Association Name="PHANLOAISACH_DAUSACH" Member="PHANLOAISACH" ThisKey="MALOAISACH" OtherKey="MALOAI" Type="PHANLOAISACH" IsForeignKey="true" />
       <Association Name="TACGIA_DAUSACH" Member="TACGIA" ThisKey="MATG" OtherKey="MATG" Type="TACGIA" IsForeignKey="true" />
+      <Association Name="VITRI_DAUSACH" Member="VITRI" ThisKey="MAVITRI" OtherKey="MAVITRI" Type="VITRI" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DOCGIA" Member="DOCGIAs">
@@ -191,6 +182,15 @@
       <Column Name="LOGIN_LOG" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="LOOUT_LOG" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Association Name="NHANVIEN_USER_LOG" Member="NHANVIEN" ThisKey="ID" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VITRI" Member="VITRIs">
+    <Type Name="VITRI">
+      <Column Name="MAVITRI" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="VITRI_DAUSACH" Member="DAUSACHes" ThisKey="MAVITRI" OtherKey="MAVITRI" Type="DAUSACH" />
     </Type>
   </Table>
   <Function Name="dbo.sp_CheckMaPhieuMuon" Method="sp_CheckMaPhieuMuon">

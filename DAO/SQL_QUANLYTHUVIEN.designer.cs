@@ -33,9 +33,6 @@ namespace DAO
     partial void InsertCHUYENMUC(CHUYENMUC instance);
     partial void UpdateCHUYENMUC(CHUYENMUC instance);
     partial void DeleteCHUYENMUC(CHUYENMUC instance);
-    partial void InsertVITRI(VITRI instance);
-    partial void UpdateVITRI(VITRI instance);
-    partial void DeleteVITRI(VITRI instance);
     partial void InsertDANGKY(DANGKY instance);
     partial void UpdateDANGKY(DANGKY instance);
     partial void DeleteDANGKY(DANGKY instance);
@@ -81,10 +78,13 @@ namespace DAO
     partial void InsertUSER_LOG(USER_LOG instance);
     partial void UpdateUSER_LOG(USER_LOG instance);
     partial void DeleteUSER_LOG(USER_LOG instance);
+    partial void InsertVITRI(VITRI instance);
+    partial void UpdateVITRI(VITRI instance);
+    partial void DeleteVITRI(VITRI instance);
     #endregion
 		
 		public SQL_QUANLYTHUVIENDataContext() : 
-				base(global::DAO.Properties.Settings.Default.SQL_QUANYTHUVIENConnectionString1, mappingSource)
+				base(global::DAO.Properties.Settings.Default.SQL_QUANYTHUVIENConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -118,14 +118,6 @@ namespace DAO
 			get
 			{
 				return this.GetTable<CHUYENMUC>();
-			}
-		}
-		
-		public System.Data.Linq.Table<VITRI> VITRIs
-		{
-			get
-			{
-				return this.GetTable<VITRI>();
 			}
 		}
 		
@@ -246,6 +238,14 @@ namespace DAO
 			get
 			{
 				return this.GetTable<USER_LOG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VITRI> VITRIs
+		{
+			get
+			{
+				return this.GetTable<VITRI>();
 			}
 		}
 		
@@ -635,168 +635,6 @@ namespace DAO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VITRI")]
-	public partial class VITRI : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MAVITRI;
-		
-		private System.Nullable<int> _KHO;
-		
-		private System.Nullable<int> _KE;
-		
-		private System.Nullable<int> _NGAN;
-		
-		private EntitySet<DAUSACH> _DAUSACHes;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMAVITRIChanging(string value);
-    partial void OnMAVITRIChanged();
-    partial void OnKHOChanging(System.Nullable<int> value);
-    partial void OnKHOChanged();
-    partial void OnKEChanging(System.Nullable<int> value);
-    partial void OnKEChanged();
-    partial void OnNGANChanging(System.Nullable<int> value);
-    partial void OnNGANChanged();
-    #endregion
-		
-		public VITRI()
-		{
-			this._DAUSACHes = new EntitySet<DAUSACH>(new Action<DAUSACH>(this.attach_DAUSACHes), new Action<DAUSACH>(this.detach_DAUSACHes));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAVITRI", DbType="VarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MAVITRI
-		{
-			get
-			{
-				return this._MAVITRI;
-			}
-			set
-			{
-				if ((this._MAVITRI != value))
-				{
-					this.OnMAVITRIChanging(value);
-					this.SendPropertyChanging();
-					this._MAVITRI = value;
-					this.SendPropertyChanged("MAVITRI");
-					this.OnMAVITRIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHO", DbType="Int")]
-		public System.Nullable<int> KHO
-		{
-			get
-			{
-				return this._KHO;
-			}
-			set
-			{
-				if ((this._KHO != value))
-				{
-					this.OnKHOChanging(value);
-					this.SendPropertyChanging();
-					this._KHO = value;
-					this.SendPropertyChanged("KHO");
-					this.OnKHOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KE", DbType="Int")]
-		public System.Nullable<int> KE
-		{
-			get
-			{
-				return this._KE;
-			}
-			set
-			{
-				if ((this._KE != value))
-				{
-					this.OnKEChanging(value);
-					this.SendPropertyChanging();
-					this._KE = value;
-					this.SendPropertyChanged("KE");
-					this.OnKEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAN", DbType="Int")]
-		public System.Nullable<int> NGAN
-		{
-			get
-			{
-				return this._NGAN;
-			}
-			set
-			{
-				if ((this._NGAN != value))
-				{
-					this.OnNGANChanging(value);
-					this.SendPropertyChanging();
-					this._NGAN = value;
-					this.SendPropertyChanged("NGAN");
-					this.OnNGANChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VITRI_DAUSACH", Storage="_DAUSACHes", ThisKey="MAVITRI", OtherKey="MAVITRI")]
-		public EntitySet<DAUSACH> DAUSACHes
-		{
-			get
-			{
-				return this._DAUSACHes;
-			}
-			set
-			{
-				this._DAUSACHes.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_DAUSACHes(DAUSACH entity)
-		{
-			this.SendPropertyChanging();
-			entity.VITRI = this;
-		}
-		
-		private void detach_DAUSACHes(DAUSACH entity)
-		{
-			this.SendPropertyChanging();
-			entity.VITRI = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DANGKY")]
 	public partial class DANGKY : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1071,8 +909,6 @@ namespace DAO
 		
 		private EntitySet<QUATRINHMUON> _QUATRINHMUONs;
 		
-		private EntityRef<VITRI> _VITRI;
-		
 		private EntityRef<NGONNGU> _NGONNGU;
 		
 		private EntityRef<NXB> _NXB;
@@ -1080,6 +916,8 @@ namespace DAO
 		private EntityRef<PHANLOAISACH> _PHANLOAISACH;
 		
 		private EntityRef<TACGIA> _TACGIA;
+		
+		private EntityRef<VITRI> _VITRI;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1114,11 +952,11 @@ namespace DAO
 			this._DANGKies = new EntitySet<DANGKY>(new Action<DANGKY>(this.attach_DANGKies), new Action<DANGKY>(this.detach_DANGKies));
 			this._MUONSACHes = new EntitySet<MUONSACH>(new Action<MUONSACH>(this.attach_MUONSACHes), new Action<MUONSACH>(this.detach_MUONSACHes));
 			this._QUATRINHMUONs = new EntitySet<QUATRINHMUON>(new Action<QUATRINHMUON>(this.attach_QUATRINHMUONs), new Action<QUATRINHMUON>(this.detach_QUATRINHMUONs));
-			this._VITRI = default(EntityRef<VITRI>);
 			this._NGONNGU = default(EntityRef<NGONNGU>);
 			this._NXB = default(EntityRef<NXB>);
 			this._PHANLOAISACH = default(EntityRef<PHANLOAISACH>);
 			this._TACGIA = default(EntityRef<TACGIA>);
+			this._VITRI = default(EntityRef<VITRI>);
 			OnCreated();
 		}
 		
@@ -1401,40 +1239,6 @@ namespace DAO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VITRI_DAUSACH", Storage="_VITRI", ThisKey="MAVITRI", OtherKey="MAVITRI", IsForeignKey=true)]
-		public VITRI VITRI
-		{
-			get
-			{
-				return this._VITRI.Entity;
-			}
-			set
-			{
-				VITRI previousValue = this._VITRI.Entity;
-				if (((previousValue != value) 
-							|| (this._VITRI.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._VITRI.Entity = null;
-						previousValue.DAUSACHes.Remove(this);
-					}
-					this._VITRI.Entity = value;
-					if ((value != null))
-					{
-						value.DAUSACHes.Add(this);
-						this._MAVITRI = value.MAVITRI;
-					}
-					else
-					{
-						this._MAVITRI = default(string);
-					}
-					this.SendPropertyChanged("VITRI");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NGONNGU_DAUSACH", Storage="_NGONNGU", ThisKey="MANGONNGU", OtherKey="MANGONNGU", IsForeignKey=true)]
 		public NGONNGU NGONNGU
 		{
@@ -1567,6 +1371,40 @@ namespace DAO
 						this._MATG = default(string);
 					}
 					this.SendPropertyChanged("TACGIA");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VITRI_DAUSACH", Storage="_VITRI", ThisKey="MAVITRI", OtherKey="MAVITRI", IsForeignKey=true)]
+		public VITRI VITRI
+		{
+			get
+			{
+				return this._VITRI.Entity;
+			}
+			set
+			{
+				VITRI previousValue = this._VITRI.Entity;
+				if (((previousValue != value) 
+							|| (this._VITRI.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._VITRI.Entity = null;
+						previousValue.DAUSACHes.Remove(this);
+					}
+					this._VITRI.Entity = value;
+					if ((value != null))
+					{
+						value.DAUSACHes.Add(this);
+						this._MAVITRI = value.MAVITRI;
+					}
+					else
+					{
+						this._MAVITRI = default(string);
+					}
+					this.SendPropertyChanged("VITRI");
 				}
 			}
 		}
@@ -4504,6 +4342,168 @@ namespace DAO
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VITRI")]
+	public partial class VITRI : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MAVITRI;
+		
+		private System.Nullable<int> _KHO;
+		
+		private System.Nullable<int> _KE;
+		
+		private System.Nullable<int> _NGAN;
+		
+		private EntitySet<DAUSACH> _DAUSACHes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMAVITRIChanging(string value);
+    partial void OnMAVITRIChanged();
+    partial void OnKHOChanging(System.Nullable<int> value);
+    partial void OnKHOChanged();
+    partial void OnKEChanging(System.Nullable<int> value);
+    partial void OnKEChanged();
+    partial void OnNGANChanging(System.Nullable<int> value);
+    partial void OnNGANChanged();
+    #endregion
+		
+		public VITRI()
+		{
+			this._DAUSACHes = new EntitySet<DAUSACH>(new Action<DAUSACH>(this.attach_DAUSACHes), new Action<DAUSACH>(this.detach_DAUSACHes));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAVITRI", DbType="VarChar(6) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MAVITRI
+		{
+			get
+			{
+				return this._MAVITRI;
+			}
+			set
+			{
+				if ((this._MAVITRI != value))
+				{
+					this.OnMAVITRIChanging(value);
+					this.SendPropertyChanging();
+					this._MAVITRI = value;
+					this.SendPropertyChanged("MAVITRI");
+					this.OnMAVITRIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHO", DbType="Int")]
+		public System.Nullable<int> KHO
+		{
+			get
+			{
+				return this._KHO;
+			}
+			set
+			{
+				if ((this._KHO != value))
+				{
+					this.OnKHOChanging(value);
+					this.SendPropertyChanging();
+					this._KHO = value;
+					this.SendPropertyChanged("KHO");
+					this.OnKHOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KE", DbType="Int")]
+		public System.Nullable<int> KE
+		{
+			get
+			{
+				return this._KE;
+			}
+			set
+			{
+				if ((this._KE != value))
+				{
+					this.OnKEChanging(value);
+					this.SendPropertyChanging();
+					this._KE = value;
+					this.SendPropertyChanged("KE");
+					this.OnKEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAN", DbType="Int")]
+		public System.Nullable<int> NGAN
+		{
+			get
+			{
+				return this._NGAN;
+			}
+			set
+			{
+				if ((this._NGAN != value))
+				{
+					this.OnNGANChanging(value);
+					this.SendPropertyChanging();
+					this._NGAN = value;
+					this.SendPropertyChanged("NGAN");
+					this.OnNGANChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VITRI_DAUSACH", Storage="_DAUSACHes", ThisKey="MAVITRI", OtherKey="MAVITRI")]
+		public EntitySet<DAUSACH> DAUSACHes
+		{
+			get
+			{
+				return this._DAUSACHes;
+			}
+			set
+			{
+				this._DAUSACHes.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_DAUSACHes(DAUSACH entity)
+		{
+			this.SendPropertyChanging();
+			entity.VITRI = this;
+		}
+		
+		private void detach_DAUSACHes(DAUSACH entity)
+		{
+			this.SendPropertyChanging();
+			entity.VITRI = null;
 		}
 	}
 	
