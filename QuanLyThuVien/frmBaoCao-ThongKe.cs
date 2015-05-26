@@ -18,7 +18,20 @@ namespace QuanLyThuVien
         {
             InitializeComponent();
         }
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
 
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    this.Invalidate();
+                    return;
+            }
+            base.WndProc(ref m);
+        }
         private void frmBaoCao_ThongKe_Load(object sender, EventArgs e)
         {
             LoadDuLieuTacGia();
@@ -159,6 +172,16 @@ namespace QuanLyThuVien
         private void m_drpQHDenNgay_ValueChanged(object sender, EventArgs e)
         {
             m_dgvQuaHan.DataSource = bc_tk.LoadDuLieuDocGiaQuaHan(1, DateTime.Parse(m_dtpQHTuNgay.Text), DateTime.Parse(m_drpQHDenNgay.Text));
+        }
+
+        private void m_btnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void m_btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         

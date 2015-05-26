@@ -74,6 +74,7 @@ namespace QuanLyThuVien
         //tinh toan tien phat
         private void TinhToanTienPhat()
         {
+            
             m_txtPTTienPhat.Text = "";
             m_txtPTsoNgayTre.Text = "";
             m_cbbPTHH.Enabled = true;
@@ -86,6 +87,7 @@ namespace QuanLyThuVien
             m_txtPTTienPhat.Text = tienphat.ToString();
             if (day > 0)
                 m_txtPTsoNgayTre.Text = day.ToString();
+             
         }
 
         private void LockTextBoxQTM()
@@ -564,7 +566,7 @@ namespace QuanLyThuVien
             m_txtPTMaSach.Text = "";
             m_txtPTTenSach.Text = "";
             m_dtpPTNgayMuon.Text = "";
-            m_dtpPTNgayHenTra.Text = "";
+            //m_dtpPTNgayHenTra.Text = "";
             m_dtpPTNgayTra.Text = "";
             m_txtPTsoNgayTre.Text = "";
             m_txtPTTienPhat.Text = "";
