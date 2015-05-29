@@ -256,10 +256,10 @@ namespace DAO
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateDuLieuQuaTrinhMuon")]
-		public int sp_UpdateDuLieuQuaTrinhMuon([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(6)")] string mapm, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(200)")] string lydo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> ngaytra, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> songaytre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> tienphat)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_XOATHELOAI")]
+		public int SP_XOATHELOAI([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MALOAI", DbType="VarChar(5)")] string mALOAI)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mapm, lydo, ngaytra, songaytre, tienphat);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mALOAI);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -337,6 +337,20 @@ namespace DAO
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_LAYDULIEUCHUYENMUC")]
+		public ISingleResult<SP_LAYDULIEUCHUYENMUCResult> SP_LAYDULIEUCHUYENMUC()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_LAYDULIEUCHUYENMUCResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_LAYDULIEUDG")]
+		public ISingleResult<SP_LAYDULIEUDGResult> SP_LAYDULIEUDG()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_LAYDULIEUDGResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LayDuLieuMuonSach")]
 		public ISingleResult<sp_LayDuLieuMuonSachResult> sp_LayDuLieuMuonSach()
 		{
@@ -344,11 +358,130 @@ namespace DAO
 			return ((ISingleResult<sp_LayDuLieuMuonSachResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_LAYDULIEUNGONNGU")]
+		public ISingleResult<SP_LAYDULIEUNGONNGUResult> SP_LAYDULIEUNGONNGU()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_LAYDULIEUNGONNGUResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_LAYDULIEUNXB")]
+		public ISingleResult<SP_LAYDULIEUNXBResult> SP_LAYDULIEUNXB()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_LAYDULIEUNXBResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LayDuLieuQuaTrinhMuon")]
 		public ISingleResult<sp_LayDuLieuQuaTrinhMuonResult> sp_LayDuLieuQuaTrinhMuon()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<sp_LayDuLieuQuaTrinhMuonResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_LAYDULIEUSACH")]
+		public ISingleResult<SP_LAYDULIEUSACHResult> SP_LAYDULIEUSACH()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_LAYDULIEUSACHResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_LAYDULIEUTG")]
+		public ISingleResult<SP_LAYDULIEUTGResult> SP_LAYDULIEUTG()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_LAYDULIEUTGResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_LAYDULIEUTHELOAI")]
+		public ISingleResult<SP_LAYDULIEUTHELOAIResult> SP_LAYDULIEUTHELOAI()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SP_LAYDULIEUTHELOAIResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SUACHUYENMUC")]
+		public int SP_SUACHUYENMUC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MACHUYENMUC", DbType="VarChar(5)")] string mACHUYENMUC, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENCHUYENMUC", DbType="NVarChar(200)")] string tENCHUYENMUC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mACHUYENMUC, tENCHUYENMUC);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SUADG")]
+		public int SP_SUADG([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MADG", DbType="Int")] System.Nullable<int> mADG, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENDG", DbType="NVarChar(30)")] string tENDG, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GIOITINH", DbType="VarChar(3)")] string gIOITINH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NGAYSINH", DbType="SmallDateTime")] System.Nullable<System.DateTime> nGAYSINH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOISINH", DbType="NVarChar(50)")] string nOISINH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIACHI", DbType="NVarChar(50)")] string dIACHI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIENTHOAI", DbType="VarChar(11)")] string dIENTHOAI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EMAIL", DbType="VarChar(30)")] string eMAIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MALOP", DbType="VarChar(8)")] string mALOP, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MALOAIDOCGIA", DbType="Int")] System.Nullable<int> mALOAIDOCGIA)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mADG, tENDG, gIOITINH, nGAYSINH, nOISINH, dIACHI, dIENTHOAI, eMAIL, mALOP, mALOAIDOCGIA);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SUANXB")]
+		public int SP_SUANXB([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MANXB", DbType="VarChar(6)")] string mANXB, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENNXB", DbType="NVarChar(20)")] string tENNXB, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIACHI", DbType="NVarChar(30)")] string dIACHI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIENTHOAI", DbType="VarChar(11)")] string dIENTHOAI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAX", DbType="VarChar(20)")] string fAX, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EMAIL", DbType="VarChar(30)")] string eMAIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WEBSITE", DbType="VarChar(30)")] string wEBSITE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GHICHU", DbType="NVarChar(200)")] string gHICHU)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mANXB, tENNXB, dIACHI, dIENTHOAI, fAX, eMAIL, wEBSITE, gHICHU);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SUASACH")]
+		public int SP_SUASACH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MASACH", DbType="VarChar(5)")] string mASACH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENSACH", DbType="NVarChar(30)")] string tENSACH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LOAISACH", DbType="VarChar(5)")] string lOAISACH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TACGIA", DbType="VarChar(5)")] string tACGIA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NN", DbType="VarChar(5)")] string nN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SOTRANG", DbType="Int")] System.Nullable<int> sOTRANG, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NXB", DbType="VarChar(6)")] string nXB, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SOTIEN", DbType="Money")] System.Nullable<decimal> sOTIEN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MAVITRI", DbType="VarChar(6)")] string mAVITRI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="KHO", DbType="Int")] System.Nullable<int> kHO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NGAN", DbType="Int")] System.Nullable<int> nGAN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="KE", DbType="Int")] System.Nullable<int> kE)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mASACH, tENSACH, lOAISACH, tACGIA, nN, sOTRANG, nXB, sOTIEN, mAVITRI, kHO, nGAN, kE);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SUATG")]
+		public int SP_SUATG([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MATG", DbType="VarChar(5)")] string mATG, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENTG", DbType="NVarChar(30)")] string tENTG, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIACHI", DbType="NVarChar(30)")] string dIACHI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIENTHOAI", DbType="VarChar(11)")] string dIENTHOAI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAX", DbType="VarChar(20)")] string fAX, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EMAIL", DbType="VarChar(30)")] string eMAIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GHICHU", DbType="VarChar(200)")] string gHICHU)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mATG, tENTG, dIACHI, dIENTHOAI, fAX, eMAIL, gHICHU);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_SUATHELOAI")]
+		public int SP_SUATHELOAI([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MALOAI", DbType="VarChar(5)")] string mALOAI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENLOAI", DbType="NVarChar(50)")] string tENLOAI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MACHUYENMUC", DbType="VarChar(5)")] string mACHUYENMUC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mALOAI, tENLOAI, mACHUYENMUC);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THEMCHUYENMUC")]
+		public int SP_THEMCHUYENMUC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MACHUYENMUC", DbType="VarChar(5)")] string mACHUYENMUC, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENCHUYENMUC", DbType="NVarChar(200)")] string tENCHUYENMUC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mACHUYENMUC, tENCHUYENMUC);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THEMDG")]
+		public int SP_THEMDG([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MADG", DbType="Int")] System.Nullable<int> mADG, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENDG", DbType="NVarChar(30)")] string tENDG, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GIOITINH", DbType="VarChar(3)")] string gIOITINH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NGAYSINH", DbType="SmallDateTime")] System.Nullable<System.DateTime> nGAYSINH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NOISINH", DbType="NVarChar(50)")] string nOISINH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIACHI", DbType="NVarChar(50)")] string dIACHI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIENTHOAI", DbType="VarChar(11)")] string dIENTHOAI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EMAIL", DbType="VarChar(30)")] string eMAIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MALOP", DbType="VarChar(8)")] string mALOP, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MALOAIDOCGIA", DbType="Int")] System.Nullable<int> mALOAIDOCGIA)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mADG, tENDG, gIOITINH, nGAYSINH, nOISINH, dIACHI, dIENTHOAI, eMAIL, mALOP, mALOAIDOCGIA);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THEMNXB")]
+		public int SP_THEMNXB([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MANXB", DbType="VarChar(6)")] string mANXB, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENNXB", DbType="NVarChar(20)")] string tENNXB, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIACHI", DbType="NVarChar(30)")] string dIACHI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIENTHOAI", DbType="VarChar(11)")] string dIENTHOAI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAX", DbType="VarChar(20)")] string fAX, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EMAIL", DbType="VarChar(30)")] string eMAIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="WEBSITE", DbType="VarChar(30)")] string wEBSITE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GHICHU", DbType="NVarChar(200)")] string gHICHU)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mANXB, tENNXB, dIACHI, dIENTHOAI, fAX, eMAIL, wEBSITE, gHICHU);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THEMSACH")]
+		public int SP_THEMSACH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MASACH", DbType="VarChar(5)")] string mASACH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENSACH", DbType="NVarChar(30)")] string tENSACH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="LOAISACH", DbType="VarChar(5)")] string lOAISACH, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TACGIA", DbType="VarChar(5)")] string tACGIA, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NN", DbType="VarChar(5)")] string nN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SOTRANG", DbType="Int")] System.Nullable<int> sOTRANG, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NXB", DbType="VarChar(6)")] string nXB, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SOTIEN", DbType="Money")] System.Nullable<decimal> sOTIEN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MAVITRI", DbType="VarChar(6)")] string mAVITRI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="KHO", DbType="Int")] System.Nullable<int> kHO, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NGAN", DbType="Int")] System.Nullable<int> nGAN, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="KE", DbType="Int")] System.Nullable<int> kE, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SL", DbType="Int")] System.Nullable<int> sL)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mASACH, tENSACH, lOAISACH, tACGIA, nN, sOTRANG, nXB, sOTIEN, mAVITRI, kHO, nGAN, kE, sL);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THEMTG")]
+		public int SP_THEMTG([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MATG", DbType="VarChar(5)")] string mATG, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENTG", DbType="NVarChar(30)")] string tENTG, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIACHI", DbType="NVarChar(30)")] string dIACHI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DIENTHOAI", DbType="VarChar(11)")] string dIENTHOAI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="FAX", DbType="VarChar(20)")] string fAX, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="EMAIL", DbType="VarChar(30)")] string eMAIL, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="GHICHU", DbType="VarChar(200)")] string gHICHU)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mATG, tENTG, dIACHI, dIENTHOAI, fAX, eMAIL, gHICHU);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_THEMTHELOAI")]
+		public int SP_THEMTHELOAI([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MALOAI", DbType="VarChar(5)")] string mALOAI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TENLOAI", DbType="NVarChar(50)")] string tENLOAI, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MACHUYENMUC", DbType="VarChar(5)")] string mACHUYENMUC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mALOAI, tENLOAI, mACHUYENMUC);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_ThongKe_BaoCaoBanDocQuaHan")]
@@ -517,6 +650,48 @@ namespace DAO
 		public int sp_UpdateDuLieuPhieuMuon([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(6)")] string mapm, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> madg, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(5)")] string masach, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> ngaymuon, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> ngaytra, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(200)")] string ghichu)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mapm, madg, masach, ngaymuon, ngaytra, ghichu);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_UpdateDuLieuQuaTrinhMuon")]
+		public int sp_UpdateDuLieuQuaTrinhMuon([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(6)")] string mapm, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(200)")] string lydo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="SmallDateTime")] System.Nullable<System.DateTime> ngaytra, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> songaytre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Money")] System.Nullable<decimal> tienphat)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mapm, lydo, ngaytra, songaytre, tienphat);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_XOACHUYENMUC")]
+		public int SP_XOACHUYENMUC([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MACHUYENMUC", DbType="VarChar(5)")] string mACHUYENMUC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mACHUYENMUC);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_XOADG")]
+		public int SP_XOADG([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MADG", DbType="Int")] System.Nullable<int> mADG)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mADG);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_XOANXB")]
+		public int SP_XOANXB([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MANXB", DbType="VarChar(5)")] string mANXB)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mANXB);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_XOASACH")]
+		public int SP_XOASACH([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MASACH", DbType="VarChar(5)")] string mASACH)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mASACH);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_XOATG")]
+		public int SP_XOATG([global::System.Data.Linq.Mapping.ParameterAttribute(Name="MATG", DbType="VarChar(5)")] string mATG)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mATG);
 			return ((int)(result.ReturnValue));
 		}
 	}
@@ -4605,6 +4780,238 @@ namespace DAO
 		}
 	}
 	
+	public partial class SP_LAYDULIEUCHUYENMUCResult
+	{
+		
+		private string _MACHUYENMUC;
+		
+		private string _TENCHUYENMUC;
+		
+		public SP_LAYDULIEUCHUYENMUCResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MACHUYENMUC", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string MACHUYENMUC
+		{
+			get
+			{
+				return this._MACHUYENMUC;
+			}
+			set
+			{
+				if ((this._MACHUYENMUC != value))
+				{
+					this._MACHUYENMUC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENCHUYENMUC", DbType="NVarChar(200)")]
+		public string TENCHUYENMUC
+		{
+			get
+			{
+				return this._TENCHUYENMUC;
+			}
+			set
+			{
+				if ((this._TENCHUYENMUC != value))
+				{
+					this._TENCHUYENMUC = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_LAYDULIEUDGResult
+	{
+		
+		private int _MADG;
+		
+		private string _TENDG;
+		
+		private string _GIOITINH;
+		
+		private System.Nullable<System.DateTime> _NGAYSINH;
+		
+		private string _NOISINH;
+		
+		private string _DIACHI;
+		
+		private string _DIENTHOAI;
+		
+		private string _EMAIL;
+		
+		private string _MALOP;
+		
+		private System.Nullable<int> _MALOAIDOCGIA;
+		
+		public SP_LAYDULIEUDGResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MADG", DbType="Int NOT NULL")]
+		public int MADG
+		{
+			get
+			{
+				return this._MADG;
+			}
+			set
+			{
+				if ((this._MADG != value))
+				{
+					this._MADG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENDG", DbType="NVarChar(30)")]
+		public string TENDG
+		{
+			get
+			{
+				return this._TENDG;
+			}
+			set
+			{
+				if ((this._TENDG != value))
+				{
+					this._TENDG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIOITINH", DbType="NVarChar(50)")]
+		public string GIOITINH
+		{
+			get
+			{
+				return this._GIOITINH;
+			}
+			set
+			{
+				if ((this._GIOITINH != value))
+				{
+					this._GIOITINH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYSINH", DbType="SmallDateTime")]
+		public System.Nullable<System.DateTime> NGAYSINH
+		{
+			get
+			{
+				return this._NGAYSINH;
+			}
+			set
+			{
+				if ((this._NGAYSINH != value))
+				{
+					this._NGAYSINH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOISINH", DbType="NVarChar(50)")]
+		public string NOISINH
+		{
+			get
+			{
+				return this._NOISINH;
+			}
+			set
+			{
+				if ((this._NOISINH != value))
+				{
+					this._NOISINH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(50)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this._DIACHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="VarChar(11)")]
+		public string DIENTHOAI
+		{
+			get
+			{
+				return this._DIENTHOAI;
+			}
+			set
+			{
+				if ((this._DIENTHOAI != value))
+				{
+					this._DIENTHOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="VarChar(30)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this._EMAIL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALOP", DbType="VarChar(8)")]
+		public string MALOP
+		{
+			get
+			{
+				return this._MALOP;
+			}
+			set
+			{
+				if ((this._MALOP != value))
+				{
+					this._MALOP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALOAIDOCGIA", DbType="Int")]
+		public System.Nullable<int> MALOAIDOCGIA
+		{
+			get
+			{
+				return this._MALOAIDOCGIA;
+			}
+			set
+			{
+				if ((this._MALOAIDOCGIA != value))
+				{
+					this._MALOAIDOCGIA = value;
+				}
+			}
+		}
+	}
+	
 	public partial class sp_LayDuLieuMuonSachResult
 	{
 		
@@ -4736,6 +5143,202 @@ namespace DAO
 				if ((this._NGAYTRA != value))
 				{
 					this._NGAYTRA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(200)")]
+		public string GHICHU
+		{
+			get
+			{
+				return this._GHICHU;
+			}
+			set
+			{
+				if ((this._GHICHU != value))
+				{
+					this._GHICHU = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_LAYDULIEUNGONNGUResult
+	{
+		
+		private string _MANGONNGU;
+		
+		private string _TENNGONNGU;
+		
+		public SP_LAYDULIEUNGONNGUResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANGONNGU", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string MANGONNGU
+		{
+			get
+			{
+				return this._MANGONNGU;
+			}
+			set
+			{
+				if ((this._MANGONNGU != value))
+				{
+					this._MANGONNGU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENNGONNGU", DbType="NVarChar(30)")]
+		public string TENNGONNGU
+		{
+			get
+			{
+				return this._TENNGONNGU;
+			}
+			set
+			{
+				if ((this._TENNGONNGU != value))
+				{
+					this._TENNGONNGU = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_LAYDULIEUNXBResult
+	{
+		
+		private string _MANXB;
+		
+		private string _TENNXB;
+		
+		private string _DIACHI;
+		
+		private string _DIENTHOAI;
+		
+		private string _FAX;
+		
+		private string _EMAIL;
+		
+		private string _WEBSITE;
+		
+		private string _GHICHU;
+		
+		public SP_LAYDULIEUNXBResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANXB", DbType="VarChar(6) NOT NULL", CanBeNull=false)]
+		public string MANXB
+		{
+			get
+			{
+				return this._MANXB;
+			}
+			set
+			{
+				if ((this._MANXB != value))
+				{
+					this._MANXB = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENNXB", DbType="NVarChar(50)")]
+		public string TENNXB
+		{
+			get
+			{
+				return this._TENNXB;
+			}
+			set
+			{
+				if ((this._TENNXB != value))
+				{
+					this._TENNXB = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(30)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this._DIACHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="VarChar(11)")]
+		public string DIENTHOAI
+		{
+			get
+			{
+				return this._DIENTHOAI;
+			}
+			set
+			{
+				if ((this._DIENTHOAI != value))
+				{
+					this._DIENTHOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAX", DbType="VarChar(20)")]
+		public string FAX
+		{
+			get
+			{
+				return this._FAX;
+			}
+			set
+			{
+				if ((this._FAX != value))
+				{
+					this._FAX = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="VarChar(30)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this._EMAIL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WEBSITE", DbType="VarChar(30)")]
+		public string WEBSITE
+		{
+			get
+			{
+				return this._WEBSITE;
+			}
+			set
+			{
+				if ((this._WEBSITE != value))
+				{
+					this._WEBSITE = value;
 				}
 			}
 		}
@@ -4994,6 +5597,426 @@ namespace DAO
 				if ((this._TRANGTHAI != value))
 				{
 					this._TRANGTHAI = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_LAYDULIEUSACHResult
+	{
+		
+		private string _MASACH;
+		
+		private string _TENSACH;
+		
+		private string _MALOAISACH;
+		
+		private string _MATG;
+		
+		private string _MANGONNGU;
+		
+		private System.Nullable<int> _SOTRANG;
+		
+		private string _MANXB;
+		
+		private System.Nullable<decimal> _SOTIEN;
+		
+		private string _MAVITRI;
+		
+		private System.Nullable<int> _KHO;
+		
+		private System.Nullable<int> _NGAN;
+		
+		private System.Nullable<int> _KE;
+		
+		public SP_LAYDULIEUSACHResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MASACH", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string MASACH
+		{
+			get
+			{
+				return this._MASACH;
+			}
+			set
+			{
+				if ((this._MASACH != value))
+				{
+					this._MASACH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENSACH", DbType="NVarChar(30)")]
+		public string TENSACH
+		{
+			get
+			{
+				return this._TENSACH;
+			}
+			set
+			{
+				if ((this._TENSACH != value))
+				{
+					this._TENSACH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALOAISACH", DbType="VarChar(5)")]
+		public string MALOAISACH
+		{
+			get
+			{
+				return this._MALOAISACH;
+			}
+			set
+			{
+				if ((this._MALOAISACH != value))
+				{
+					this._MALOAISACH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATG", DbType="VarChar(5)")]
+		public string MATG
+		{
+			get
+			{
+				return this._MATG;
+			}
+			set
+			{
+				if ((this._MATG != value))
+				{
+					this._MATG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANGONNGU", DbType="VarChar(5)")]
+		public string MANGONNGU
+		{
+			get
+			{
+				return this._MANGONNGU;
+			}
+			set
+			{
+				if ((this._MANGONNGU != value))
+				{
+					this._MANGONNGU = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOTRANG", DbType="Int")]
+		public System.Nullable<int> SOTRANG
+		{
+			get
+			{
+				return this._SOTRANG;
+			}
+			set
+			{
+				if ((this._SOTRANG != value))
+				{
+					this._SOTRANG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANXB", DbType="VarChar(6)")]
+		public string MANXB
+		{
+			get
+			{
+				return this._MANXB;
+			}
+			set
+			{
+				if ((this._MANXB != value))
+				{
+					this._MANXB = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOTIEN", DbType="Money")]
+		public System.Nullable<decimal> SOTIEN
+		{
+			get
+			{
+				return this._SOTIEN;
+			}
+			set
+			{
+				if ((this._SOTIEN != value))
+				{
+					this._SOTIEN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAVITRI", DbType="VarChar(6)")]
+		public string MAVITRI
+		{
+			get
+			{
+				return this._MAVITRI;
+			}
+			set
+			{
+				if ((this._MAVITRI != value))
+				{
+					this._MAVITRI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KHO", DbType="Int")]
+		public System.Nullable<int> KHO
+		{
+			get
+			{
+				return this._KHO;
+			}
+			set
+			{
+				if ((this._KHO != value))
+				{
+					this._KHO = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAN", DbType="Int")]
+		public System.Nullable<int> NGAN
+		{
+			get
+			{
+				return this._NGAN;
+			}
+			set
+			{
+				if ((this._NGAN != value))
+				{
+					this._NGAN = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KE", DbType="Int")]
+		public System.Nullable<int> KE
+		{
+			get
+			{
+				return this._KE;
+			}
+			set
+			{
+				if ((this._KE != value))
+				{
+					this._KE = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_LAYDULIEUTGResult
+	{
+		
+		private string _MATG;
+		
+		private string _TENTG;
+		
+		private string _DIACHI;
+		
+		private string _DIENTHOAI;
+		
+		private string _FAX;
+		
+		private string _EMAIL;
+		
+		private string _GHICHU;
+		
+		public SP_LAYDULIEUTGResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATG", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string MATG
+		{
+			get
+			{
+				return this._MATG;
+			}
+			set
+			{
+				if ((this._MATG != value))
+				{
+					this._MATG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENTG", DbType="NVarChar(30)")]
+		public string TENTG
+		{
+			get
+			{
+				return this._TENTG;
+			}
+			set
+			{
+				if ((this._TENTG != value))
+				{
+					this._TENTG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(30)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this._DIACHI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIENTHOAI", DbType="VarChar(11)")]
+		public string DIENTHOAI
+		{
+			get
+			{
+				return this._DIENTHOAI;
+			}
+			set
+			{
+				if ((this._DIENTHOAI != value))
+				{
+					this._DIENTHOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FAX", DbType="VarChar(20)")]
+		public string FAX
+		{
+			get
+			{
+				return this._FAX;
+			}
+			set
+			{
+				if ((this._FAX != value))
+				{
+					this._FAX = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="VarChar(30)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this._EMAIL = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="VarChar(200)")]
+		public string GHICHU
+		{
+			get
+			{
+				return this._GHICHU;
+			}
+			set
+			{
+				if ((this._GHICHU != value))
+				{
+					this._GHICHU = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_LAYDULIEUTHELOAIResult
+	{
+		
+		private string _MALOAI;
+		
+		private string _TENLOAI;
+		
+		private string _MACHUYENMUC;
+		
+		public SP_LAYDULIEUTHELOAIResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALOAI", DbType="VarChar(5) NOT NULL", CanBeNull=false)]
+		public string MALOAI
+		{
+			get
+			{
+				return this._MALOAI;
+			}
+			set
+			{
+				if ((this._MALOAI != value))
+				{
+					this._MALOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLOAI", DbType="NVarChar(50)")]
+		public string TENLOAI
+		{
+			get
+			{
+				return this._TENLOAI;
+			}
+			set
+			{
+				if ((this._TENLOAI != value))
+				{
+					this._TENLOAI = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MACHUYENMUC", DbType="VarChar(5)")]
+		public string MACHUYENMUC
+		{
+			get
+			{
+				return this._MACHUYENMUC;
+			}
+			set
+			{
+				if ((this._MACHUYENMUC != value))
+				{
+					this._MACHUYENMUC = value;
 				}
 			}
 		}

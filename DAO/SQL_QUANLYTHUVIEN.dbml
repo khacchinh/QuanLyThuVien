@@ -197,12 +197,8 @@
     <Parameter Name="maphm" Type="System.String" DbType="VarChar(6)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.sp_UpdateDuLieuQuaTrinhMuon" Method="sp_UpdateDuLieuQuaTrinhMuon">
-    <Parameter Name="mapm" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="lydo" Type="System.String" DbType="NVarChar(200)" />
-    <Parameter Name="ngaytra" Type="System.DateTime" DbType="SmallDateTime" />
-    <Parameter Name="songaytre" Type="System.Int32" DbType="Int" />
-    <Parameter Name="tienphat" Type="System.Decimal" DbType="Money" />
+  <Function Name="dbo.SP_XOATHELOAI" Method="SP_XOATHELOAI">
+    <Parameter Name="MALOAI" Parameter="mALOAI" Type="System.String" DbType="VarChar(5)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_DeleteDuLieuPhieuMuon" Method="sp_DeleteDuLieuPhieuMuon">
@@ -272,6 +268,26 @@
     <Parameter Name="sosach" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_LAYDULIEUCHUYENMUC" Method="SP_LAYDULIEUCHUYENMUC">
+    <ElementType Name="SP_LAYDULIEUCHUYENMUCResult">
+      <Column Name="MACHUYENMUC" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TENCHUYENMUC" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LAYDULIEUDG" Method="SP_LAYDULIEUDG">
+    <ElementType Name="SP_LAYDULIEUDGResult">
+      <Column Name="MADG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENDG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NOISINH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MALOP" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="MALOAIDOCGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.sp_LayDuLieuMuonSach" Method="sp_LayDuLieuMuonSach">
     <ElementType Name="sp_LayDuLieuMuonSachResult">
       <Column Name="MAPHIEUMUON" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
@@ -281,6 +297,24 @@
       <Column Name="TENSACH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="NGAYMUON" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
       <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LAYDULIEUNGONNGU" Method="SP_LAYDULIEUNGONNGU">
+    <ElementType Name="SP_LAYDULIEUNGONNGUResult">
+      <Column Name="MANGONNGU" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TENNGONNGU" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LAYDULIEUNXB" Method="SP_LAYDULIEUNXB">
+    <ElementType Name="SP_LAYDULIEUNXBResult">
+      <Column Name="MANXB" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="TENNXB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="FAX" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="WEBSITE" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
     </ElementType>
   </Function>
@@ -300,6 +334,161 @@
       <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="TRANGTHAI" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LAYDULIEUSACH" Method="SP_LAYDULIEUSACH">
+    <ElementType Name="SP_LAYDULIEUSACHResult">
+      <Column Name="MASACH" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TENSACH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MALOAISACH" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="MATG" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="MANGONNGU" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="SOTRANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MANXB" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="SOTIEN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MAVITRI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="KHO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NGAN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LAYDULIEUTG" Method="SP_LAYDULIEUTG">
+    <ElementType Name="SP_LAYDULIEUTGResult">
+      <Column Name="MATG" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TENTG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="FAX" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LAYDULIEUTHELOAI" Method="SP_LAYDULIEUTHELOAI">
+    <ElementType Name="SP_LAYDULIEUTHELOAIResult">
+      <Column Name="MALOAI" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MACHUYENMUC" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_SUACHUYENMUC" Method="SP_SUACHUYENMUC">
+    <Parameter Name="MACHUYENMUC" Parameter="mACHUYENMUC" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TENCHUYENMUC" Parameter="tENCHUYENMUC" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SUADG" Method="SP_SUADG">
+    <Parameter Name="MADG" Parameter="mADG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TENDG" Parameter="tENDG" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="GIOITINH" Parameter="gIOITINH" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="NGAYSINH" Parameter="nGAYSINH" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="NOISINH" Parameter="nOISINH" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DIACHI" Parameter="dIACHI" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DIENTHOAI" Parameter="dIENTHOAI" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="MALOP" Parameter="mALOP" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MALOAIDOCGIA" Parameter="mALOAIDOCGIA" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SUANXB" Method="SP_SUANXB">
+    <Parameter Name="MANXB" Parameter="mANXB" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="TENNXB" Parameter="tENNXB" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="DIACHI" Parameter="dIACHI" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="DIENTHOAI" Parameter="dIENTHOAI" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="FAX" Parameter="fAX" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="WEBSITE" Parameter="wEBSITE" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GHICHU" Parameter="gHICHU" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SUASACH" Method="SP_SUASACH">
+    <Parameter Name="MASACH" Parameter="mASACH" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TENSACH" Parameter="tENSACH" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="LOAISACH" Parameter="lOAISACH" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TACGIA" Parameter="tACGIA" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NN" Parameter="nN" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="SOTRANG" Parameter="sOTRANG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NXB" Parameter="nXB" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="SOTIEN" Parameter="sOTIEN" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MAVITRI" Parameter="mAVITRI" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="KHO" Parameter="kHO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NGAN" Parameter="nGAN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KE" Parameter="kE" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SUATG" Method="SP_SUATG">
+    <Parameter Name="MATG" Parameter="mATG" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TENTG" Parameter="tENTG" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="DIACHI" Parameter="dIACHI" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="DIENTHOAI" Parameter="dIENTHOAI" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="FAX" Parameter="fAX" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GHICHU" Parameter="gHICHU" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_SUATHELOAI" Method="SP_SUATHELOAI">
+    <Parameter Name="MALOAI" Parameter="mALOAI" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TENLOAI" Parameter="tENLOAI" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MACHUYENMUC" Parameter="mACHUYENMUC" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_THEMCHUYENMUC" Method="SP_THEMCHUYENMUC">
+    <Parameter Name="MACHUYENMUC" Parameter="mACHUYENMUC" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TENCHUYENMUC" Parameter="tENCHUYENMUC" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_THEMDG" Method="SP_THEMDG">
+    <Parameter Name="MADG" Parameter="mADG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TENDG" Parameter="tENDG" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="GIOITINH" Parameter="gIOITINH" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="NGAYSINH" Parameter="nGAYSINH" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="NOISINH" Parameter="nOISINH" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DIACHI" Parameter="dIACHI" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DIENTHOAI" Parameter="dIENTHOAI" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="MALOP" Parameter="mALOP" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="MALOAIDOCGIA" Parameter="mALOAIDOCGIA" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_THEMNXB" Method="SP_THEMNXB">
+    <Parameter Name="MANXB" Parameter="mANXB" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="TENNXB" Parameter="tENNXB" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="DIACHI" Parameter="dIACHI" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="DIENTHOAI" Parameter="dIENTHOAI" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="FAX" Parameter="fAX" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="WEBSITE" Parameter="wEBSITE" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GHICHU" Parameter="gHICHU" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_THEMSACH" Method="SP_THEMSACH">
+    <Parameter Name="MASACH" Parameter="mASACH" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TENSACH" Parameter="tENSACH" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="LOAISACH" Parameter="lOAISACH" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TACGIA" Parameter="tACGIA" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="NN" Parameter="nN" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="SOTRANG" Parameter="sOTRANG" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NXB" Parameter="nXB" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="SOTIEN" Parameter="sOTIEN" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="MAVITRI" Parameter="mAVITRI" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="KHO" Parameter="kHO" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NGAN" Parameter="nGAN" Type="System.Int32" DbType="Int" />
+    <Parameter Name="KE" Parameter="kE" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SL" Parameter="sL" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_THEMTG" Method="SP_THEMTG">
+    <Parameter Name="MATG" Parameter="mATG" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TENTG" Parameter="tENTG" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="DIACHI" Parameter="dIACHI" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="DIENTHOAI" Parameter="dIENTHOAI" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="FAX" Parameter="fAX" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="GHICHU" Parameter="gHICHU" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_THEMTHELOAI" Method="SP_THEMTHELOAI">
+    <Parameter Name="MALOAI" Parameter="mALOAI" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="TENLOAI" Parameter="tENLOAI" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="MACHUYENMUC" Parameter="mACHUYENMUC" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.sp_ThongKe_BaoCaoBanDocQuaHan" Method="sp_ThongKe_BaoCaoBanDocQuaHan">
     <Parameter Name="loai" Type="System.Int32" DbType="Int" />
@@ -683,6 +872,34 @@
     <Parameter Name="ngaymuon" Type="System.DateTime" DbType="SmallDateTime" />
     <Parameter Name="ngaytra" Type="System.DateTime" DbType="SmallDateTime" />
     <Parameter Name="ghichu" Type="System.String" DbType="VarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_UpdateDuLieuQuaTrinhMuon" Method="sp_UpdateDuLieuQuaTrinhMuon">
+    <Parameter Name="mapm" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="lydo" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="ngaytra" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="songaytre" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tienphat" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_XOACHUYENMUC" Method="SP_XOACHUYENMUC">
+    <Parameter Name="MACHUYENMUC" Parameter="mACHUYENMUC" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_XOADG" Method="SP_XOADG">
+    <Parameter Name="MADG" Parameter="mADG" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_XOANXB" Method="SP_XOANXB">
+    <Parameter Name="MANXB" Parameter="mANXB" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_XOASACH" Method="SP_XOASACH">
+    <Parameter Name="MASACH" Parameter="mASACH" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_XOATG" Method="SP_XOATG">
+    <Parameter Name="MATG" Parameter="mATG" Type="System.String" DbType="VarChar(5)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>
