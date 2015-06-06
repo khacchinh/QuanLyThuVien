@@ -11,22 +11,26 @@ namespace BUS
 {
     public class BaoCao_ThongKe_Bus
     {
-        private SQL_QUANLYTHUVIENDataContext DB = new SQL_QUANLYTHUVIENDataContext();
+        public BaoCao_ThongKe_Bus()
+        {
+            if (!SQLDataContext.IsLoad)
+                SQLDataContext.CreateDataContext();
+        }
 
         public DataTable LoadDuLieuTacGia()
         {
-            return ConvertToDataTable(DB.TACGIAs.ToList());
+            return ConvertToDataTable(SQLDataContext.SQLData.TACGIAs.ToList());
         }
         
 
         public DataTable LoadDuLieuNXB()
         {
-            return ConvertToDataTable(DB.NXBs.ToList());
+            return ConvertToDataTable(SQLDataContext.SQLData.NXBs.ToList());
         }
 
         public DataTable LoadDuLieuTheLoai()
         {
-            return ConvertToDataTable(DB.PHANLOAISACHes.ToList());
+            return ConvertToDataTable(SQLDataContext.SQLData.PHANLOAISACHes.ToList());
         }
 
         private DataTable ConvertToDataTable<T>(IList<T> data)
@@ -45,7 +49,7 @@ namespace BUS
             }
             return table;
         }
-
+        
         public DataTable LoadDuLieuSach()
         {
             DataTable dt = new DataTable();
@@ -65,7 +69,7 @@ namespace BUS
             dt.Columns.Add("SLDANGMUON", typeof(string));
             dt.Columns.Add("SLCONLAI", typeof(string));
 
-            var thongke = DB.sp_ThongKe_BaoCaoSach();
+            var thongke = SQLDataContext.SQLData.sp_ThongKe_BaoCaoSach();
             int c = 1;
 
             foreach (var i in thongke)
@@ -82,7 +86,7 @@ namespace BUS
                 r["SOLUONG"] = i.SOLUONG;
                 r["TENNGONNGU"] = i.TENNGONNGU;
                 r["SOTIEN"] = i.SOTIEN;
-                r["SLDANGMUON"] = i.SLDANGMUON;
+                r["SLDANGMUON"] = i.SLDANGMUON;     
                 r["SLCONLAI"] = (int.Parse(i.SOLUONG.ToString()) - int.Parse(i.SLDANGMUON.ToString())).ToString();
                 r["KHO"] = i.KHO;
                 r["NGAN"] = i.NGAN;
@@ -93,7 +97,7 @@ namespace BUS
                 return null;
             return dt;
         }
-
+        
         public DataTable LoadDuLieuDocGiaQuaHan(int loai, DateTime tungay, DateTime denngay)
         {
             DataTable dt = new DataTable();
@@ -108,7 +112,7 @@ namespace BUS
             dt.Columns.Add("NGAYTRA", typeof(string));
             dt.Columns.Add("SONGAYTRE", typeof(string));
 
-            var thongke = DB.sp_ThongKe_BaoCaoBanDocQuaHan(loai, tungay, denngay);
+            var thongke = SQLDataContext.SQLData.sp_ThongKe_BaoCaoBanDocQuaHan(loai, tungay, denngay);
             int c = 1;
 
             foreach (var i in thongke)

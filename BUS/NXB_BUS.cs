@@ -10,7 +10,11 @@ namespace BUS
 {
     public class NXB_BUS
     {
-        private SQL_QUANLYTHUVIENDataContext db = new SQL_QUANLYTHUVIENDataContext();
+        public NXB_BUS()
+        {
+            if (SQLDataContext.IsLoad)
+                SQLDataContext.CreateDataContext();
+        }
 
         public DataTable LayDuLieuNXB()
         {
@@ -24,7 +28,8 @@ namespace BUS
             dt.Columns.Add("WEBSITE", typeof(string));
             dt.Columns.Add("GHICHU", typeof(string));
 
-            var tem = db.SP_LAYDULIEUNXB();
+            var tem = from nxb in SQLDataContext.SQLData.NXBs
+                      select nxb;
 
             foreach (var i in tem)
             {
@@ -47,7 +52,7 @@ namespace BUS
         {
             try
             {
-                db.SP_THEMNXB(nxb.MANXB, nxb.TENNXB, nxb.DIACHI, nxb.DIENTHOAI, nxb.FAX, nxb.EMAIL, nxb.WEBSITE, nxb.GHICHU);
+                SuaNXB(nxb);
                 return true;
             }
             catch
@@ -60,7 +65,15 @@ namespace BUS
         {
             try
             {
-                db.SP_SUANXB(nxb.MANXB, nxb.TENNXB, nxb.DIACHI, nxb.DIENTHOAI, nxb.FAX, nxb.EMAIL, nxb.WEBSITE, nxb.GHICHU);
+                var sua_nxb = SQLDataContext.SQLData.NXBs.Single(xb => xb.MANXB == nxb.MANXB);
+                sua_nxb.TENNXB = nxb.TENNXB;
+                sua_nxb.DIACHI = nxb.DIACHI;
+                sua_nxb.DIENTHOAI = nxb.DIENTHOAI;
+                sua_nxb.FAX = nxb.FAX;
+                sua_nxb.EMAIL = nxb.EMAIL;
+                sua_nxb.WEBSITE = nxb.WEBSITE;
+                sua_nxb.GHICHU = nxb.GHICHU;
+                SQLDataContext.SQLData.SubmitChanges();
                 return true;
             }
             catch
@@ -73,12 +86,67 @@ namespace BUS
         {
             try
             {
-                db.SP_XOANXB(nxb.MANXB);
+                SQLDataContext.SQLData.SP_XOANXB(nxb.MANXB);
                 return true;
             }
             catch
             {
                 return false;
+            }
+        }
+
+        //lay ten nha xuat ban
+        public string GetTenNXB(string manxb)
+        {
+            try
+            {
+                return SQLDataContext.SQLData.NXBs.Single(nxb => nxb.MANXB == manxb).TENNXB;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        //lay ma sach lon nhat
+        public string GetMaNXBMax()
+        {
+            string manxb = "";
+            try
+            {
+                //string masach = ""; 
+                int maso;
+                SQLDataContext.SQLData.sp_getMaNXBMax(ref manxb);
+                maso = int.Parse(manxb.Substring(3)) + 1;
+                if (maso.ToString().Length == 1)
+                    manxb = "NXB00" + maso.ToString();
+                else if (maso.ToString().Length == 2)
+                    manxb = "NXB0" + maso.ToString();
+                else manxb = "NXB" + maso.ToString();
+
+                SQLDataContext.CreateDataContext();
+                NXB nxb = new NXB();
+                nxb.MANXB = manxb;
+                SQLDataContext.SQLData.NXBs.InsertOnSubmit(nxb);
+                SQLDataContext.SQLData.SubmitChanges();
+                return manxb;
+            }
+            catch
+            {
+                return "demo";
+            }
+        }
+        //delete ma sach rong
+        public void DeleteMaNXBMax()
+        {
+            try
+            {
+                NXB nxb = SQLDataContext.SQLData.NXBs.Single(xb => xb.TENNXB == null);
+                SQLDataContext.SQLData.NXBs.DeleteOnSubmit(nxb);
+                SQLDataContext.SQLData.SubmitChanges();
+            }
+            catch
+            {
+
             }
         }
     }

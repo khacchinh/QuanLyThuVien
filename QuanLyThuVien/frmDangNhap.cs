@@ -14,11 +14,13 @@ namespace QuanLyThuVien
 {
     public partial class frmDangNhap : Form
     {
-        private Login_BUS login_bus = new Login_BUS();
         private NHANVIEN nhanvien = new NHANVIEN();
         public frmDangNhap()
         {
             InitializeComponent();
+
+            if (!DataBase.IsLoad)
+                DataBase.InitDataBase();
         }
         protected override void WndProc(ref Message m)
         {
@@ -44,7 +46,7 @@ namespace QuanLyThuVien
 
         private void m_btnLogin_Click(object sender, EventArgs e)
         {
-            if (login_bus.Login(m_txtID.Text, m_txtPass.Text, ref nhanvien))
+            if (DataBase.Login.Login(m_txtID.Text, m_txtPass.Text, ref nhanvien))
             {
                 this.Visible = false;
                 frmMain.nhanvien = nhanvien;

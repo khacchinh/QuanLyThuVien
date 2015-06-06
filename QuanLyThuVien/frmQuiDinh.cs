@@ -13,7 +13,6 @@ namespace QuanLyThuVien
 {
     public partial class frmQuiDinh : Form
     {
-        private QuiDinh_Bus qd = new QuiDinh_Bus();
         public frmQuiDinh()
         {
             InitializeComponent();
@@ -35,7 +34,7 @@ namespace QuanLyThuVien
         }
         private void LoadDuLieuQuiDinh()
         {
-            m_dgvQD.DataSource = qd.LoadDuLieuQD();
+            m_dgvQD.DataSource = DataBase.QuiDinh.LoadDuLieuQD();
         }
 
         private void m_btnMin_Click(object sender, EventArgs e)

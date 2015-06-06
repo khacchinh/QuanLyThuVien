@@ -11,7 +11,12 @@ namespace BUS
 {
     public class PhieuMuon_Bus
     {
-        private SQL_QUANLYTHUVIENDataContext DB = new SQL_QUANLYTHUVIENDataContext();
+        private MUONSACH muonsach;
+        public PhieuMuon_Bus()
+        {
+            if (!SQLDataContext.IsLoad)
+                SQLDataContext.CreateDataContext();
+        }
         //Lấy thông tin phiếu mượn sách
         public DataTable LayDuLieuMuonSach()
         {
@@ -26,7 +31,7 @@ namespace BUS
             dt.Columns.Add("NGAYTRA", typeof(string));
             dt.Columns.Add("GHICHU", typeof(string));
 
-            var phieumuon = DB.sp_LayDuLieuMuonSach();
+            var phieumuon = SQLDataContext.SQLData.sp_LayDuLieuMuonSach();
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -54,7 +59,7 @@ namespace BUS
         {
             try
             {
-                return DB.DOCGIAs.Where(dg => dg.MADG == madg).FirstOrDefault().TENDG.ToString();
+                return SQLDataContext.SQLData.DOCGIAs.Where(dg => dg.MADG == madg).FirstOrDefault().TENDG.ToString();
             }
             catch
             {
@@ -67,7 +72,7 @@ namespace BUS
         {
             try
             {
-                return DB.DAUSACHes.Where(ds => ds.MASACH == masach).FirstOrDefault().TENSACH;
+                return SQLDataContext.SQLData.DAUSACHes.Where(ds => ds.MASACH == masach).FirstOrDefault().TENSACH;
             }
             catch
             {
@@ -80,7 +85,7 @@ namespace BUS
         {
             try
             {
-                DB.sp_InsertDuLieuPhieuMuonSach(muonsach.MAPHIEUMUON, muonsach.MADG, muonsach.MASACH, muonsach.NGAYMUON, muonsach.NGAYTRA, muonsach.GHICHU);
+                UpdateDuLieuPhieuMuon(muonsach);
                 return true;
             }
             catch
@@ -94,7 +99,7 @@ namespace BUS
         {
             try
             {
-                DB.sp_UpdateDuLieuPhieuMuon(muonsach.MAPHIEUMUON, muonsach.MADG, muonsach.MASACH, muonsach.NGAYMUON, muonsach.NGAYTRA, muonsach.GHICHU);
+                SQLDataContext.SQLData.sp_UpdateDuLieuPhieuMuon(muonsach.MAPHIEUMUON, muonsach.MADG, muonsach.MASACH, muonsach.NGAYMUON, muonsach.NGAYTRA, muonsach.GHICHU);
                 return true;       
             }
             catch
@@ -108,7 +113,7 @@ namespace BUS
         {
             try
             {
-                DB.sp_DeleteDuLieuPhieuMuon(muonsach.MAPHIEUMUON);
+                SQLDataContext.SQLData.sp_DeleteDuLieuPhieuMuon(muonsach.MAPHIEUMUON);
                 return true;
             }
             catch
@@ -122,7 +127,7 @@ namespace BUS
         {
             try
             {
-                int a = DB.sp_CheckMaPhieuMuon(muonsach.MAPHIEUMUON);
+                int a = SQLDataContext.SQLData.sp_CheckMaPhieuMuon(muonsach.MAPHIEUMUON);
                 if(a==1)
                   return true;
                 return false;
@@ -134,7 +139,7 @@ namespace BUS
         }
 
         //tìm kiếm phiếu mượn theo mã phiếu mượn
-        public DataTable TimKiemPhieuMuonTheoMaPM(MUONSACH muonsach, DateTime tungay, DateTime denngay,int kt)
+        public DataTable TimKiemPhieuMuonTheoMaPM(MUONSACH muonsach, DateTime tungay, DateTime denngay)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
@@ -147,7 +152,7 @@ namespace BUS
             dt.Columns.Add("NGAYTRA", typeof(string));
             dt.Columns.Add("GHICHU", typeof(string));
 
-            var phieumuon = DB.sp_TimKiemPhieuMuonTheoMPM(muonsach.MAPHIEUMUON, tungay, denngay, kt);
+            var phieumuon = SQLDataContext.SQLData.sp_TimKiemPhieuMuonTheoMPM(muonsach.MAPHIEUMUON, tungay, denngay);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -171,7 +176,7 @@ namespace BUS
         }
 
         //tìm kiếm phiếu mượn theo mã sách
-        public DataTable TimKiemPhieuMuonTheoMaSach(MUONSACH muonsach, DateTime tungay, DateTime denngay, int kt)
+        public DataTable TimKiemPhieuMuonTheoMaSach(MUONSACH muonsach, DateTime tungay, DateTime denngay)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
@@ -184,7 +189,7 @@ namespace BUS
             dt.Columns.Add("NGAYTRA", typeof(string));
             dt.Columns.Add("GHICHU", typeof(string));
 
-            var phieumuon = DB.sp_TimKiemPhieuMuonTheoMS(muonsach.MASACH, tungay, denngay, kt);
+            var phieumuon = SQLDataContext.SQLData.sp_TimKiemPhieuMuonTheoMS(muonsach.MASACH, tungay, denngay);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -208,7 +213,7 @@ namespace BUS
         }
 
         //tìm kiếm phiếu mượn theo đọc giả
-        public DataTable TimKiemPhieuMuonTheoMaDG(MUONSACH muonsach, DateTime tungay, DateTime denngay, int kt)
+        public DataTable TimKiemPhieuMuonTheoMaDG(MUONSACH muonsach, DateTime tungay, DateTime denngay)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
@@ -221,7 +226,7 @@ namespace BUS
             dt.Columns.Add("NGAYTRA", typeof(string));
             dt.Columns.Add("GHICHU", typeof(string));
 
-            var phieumuon = DB.sp_TimKiemPhieuMuonTheoMDG(muonsach.MADG, tungay, denngay, kt);
+            var phieumuon = SQLDataContext.SQLData.sp_TimKiemPhieuMuonTheoMDG(muonsach.MADG, tungay, denngay);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -245,7 +250,7 @@ namespace BUS
         }
 
         //tim kiem theo ten
-        public DataTable TimKiemPhieuMuonTheoTenDG(string tendg, DateTime tungay, DateTime denngay, int kt)
+        public DataTable TimKiemPhieuMuonTheoTenDG(string tendg, DateTime tungay, DateTime denngay)
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("STT", typeof(int));
@@ -258,7 +263,7 @@ namespace BUS
             dt.Columns.Add("NGAYTRA", typeof(string));
             dt.Columns.Add("GHICHU", typeof(string));
 
-            var phieumuon = DB.sp_TimKiemPhieuMuonTheoTenDG(tendg, tungay, denngay, kt);
+            var phieumuon = SQLDataContext.SQLData.sp_TimKiemPhieuMuonTheoTenDG(tendg, tungay, denngay);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -295,7 +300,7 @@ namespace BUS
             dt.Columns.Add("NGAYTRA", typeof(string));
             dt.Columns.Add("GHICHU", typeof(string));
 
-            var phieumuon = DB.sp_TimKiemPhieuMuonTheoTenTaiLieu(tensach);
+            var phieumuon = SQLDataContext.SQLData.sp_TimKiemPhieuMuonTheoTenTaiLieu(tensach);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -324,7 +329,7 @@ namespace BUS
             int? sosach = 0;
             try
             {
-                DB.sp_KiemTraSosachChuaTraTheoMaDG(madg, ref sosach);
+                SQLDataContext.SQLData.sp_KiemTraSosachChuaTraTheoMaDG(madg, ref sosach);
                 return "Số lượng tài liệu chưa trả là: " + sosach.ToString();
             }
             catch
@@ -339,7 +344,7 @@ namespace BUS
             int? sosach = 0;
             try
             {
-                DB.sp_KiemTraSosachChuaTraTheoTenDG(tendg, ref sosach);
+                SQLDataContext.SQLData.sp_KiemTraSosachChuaTraTheoTenDG(tendg, ref sosach);
                 return "Số lượng tài liệu chưa trả là: " + sosach.ToString();
             }
             catch
@@ -354,7 +359,7 @@ namespace BUS
             int? sosach = 0;
             try
             {
-                DB.sp_KiemTraSosachChuaTraTheoMaSach(masach, ref sosach);
+                SQLDataContext.SQLData.sp_KiemTraSosachChuaTraTheoMaSach(masach, ref sosach);
                 return "Số lượng tài liệu chưa trả là: " + sosach.ToString();
             }
             catch
@@ -369,12 +374,51 @@ namespace BUS
             int? sosach = 0;
             try
             {
-                DB.sp_KiemTraSosachChuaTraTheoTenSach(tensach, ref sosach);
+                SQLDataContext.SQLData.sp_KiemTraSosachChuaTraTheoTenSach(tensach, ref sosach);
                 return "Số lượng tài liệu chưa trả là: " + sosach.ToString();
             }
             catch
             {
                 return "";
+            }
+        }
+
+        //lay ma phieu muon lon nhat
+        public string GetMaPMMax(){
+            try{
+                string mapm = ""; int maso;
+                SQLDataContext.SQLData.sp_getMaPMMax(ref mapm);
+                maso = int.Parse(mapm.Substring(2))+1;
+                if(maso.ToString().Length == 1)
+                    mapm =  "PM000" + maso.ToString();
+                else if (maso.ToString().Length == 2)
+                    mapm = "PM00" + maso.ToString();
+                else if(maso.ToString().Length == 3)
+                    mapm = "PM0" + maso.ToString();
+                else mapm = "PM" + maso.ToString();
+
+                SQLDataContext.CreateDataContext();
+                muonsach = new MUONSACH();
+                muonsach.MAPHIEUMUON = mapm;
+                SQLDataContext.SQLData.MUONSACHes.InsertOnSubmit(muonsach);
+                SQLDataContext.SQLData.SubmitChanges();
+                return mapm;
+            }
+            catch{
+                return "demo";
+            }
+        }
+        public void DeleteMaPMMax()
+        {
+            try
+            {
+                muonsach = SQLDataContext.SQLData.MUONSACHes.Single(ms => ms.MASACH == null);
+                SQLDataContext.SQLData.MUONSACHes.DeleteOnSubmit(muonsach);
+                SQLDataContext.SQLData.SubmitChanges();
+            }
+            catch
+            {
+
             }
         }
     }

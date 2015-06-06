@@ -11,12 +11,16 @@ namespace BUS
 {
     public class DangKy_BUS
     {
-        SQL_QUANLYTHUVIENDataContext DB = new SQL_QUANLYTHUVIENDataContext();
+        public DangKy_BUS()
+        {
+            if (!SQLDataContext.IsLoad)
+                SQLDataContext.CreateDataContext();
+        }
 
         public DataTable LoadDuLieuDangKy()
         {
             DataTable dataTable = new DataTable();
-            dataTable = ConvertToDataTable(DB.DANGKies.ToList());
+            dataTable = ConvertToDataTable(SQLDataContext.SQLData.DANGKies.ToList());
             dataTable.Columns.RemoveAt(6);
             dataTable.Columns.RemoveAt(5);
             return dataTable;
@@ -32,7 +36,7 @@ namespace BUS
             dt.Columns.Add("NGAYDK", typeof(string));
             dt.Columns.Add("GHICHU", typeof(string));
 
-            var phieumuon = DB.sp_DemoDangKi();
+            var phieumuon = SQLDataContext.SQLData.sp_DemoDangKi();
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -56,7 +60,7 @@ namespace BUS
         {
             try
             {
-                return DB.DOCGIAs.Where(dg => dg.MADG == madg).FirstOrDefault().TENDG.ToString();
+                return SQLDataContext.SQLData.DOCGIAs.Where(dg => dg.MADG == madg).FirstOrDefault().TENDG.ToString();
             }
             catch
             {
@@ -68,7 +72,7 @@ namespace BUS
         {
             try
             {
-                return DB.DAUSACHes.Where(ds => ds.MASACH == matl).FirstOrDefault().TENSACH.ToString();
+                return SQLDataContext.SQLData.DAUSACHes.Where(ds => ds.MASACH == matl).FirstOrDefault().TENSACH.ToString();
             }
             catch
             {
@@ -80,9 +84,9 @@ namespace BUS
         {
             try
             {
-                var dulieu = DB.DANGKies.SingleOrDefault(dk => dk.MADK == madk);
-                DB.DANGKies.DeleteOnSubmit(dulieu);
-                DB.SubmitChanges();
+                var dulieu = SQLDataContext.SQLData.DANGKies.SingleOrDefault(dk => dk.MADK == madk);
+                SQLDataContext.SQLData.DANGKies.DeleteOnSubmit(dulieu);
+                SQLDataContext.SQLData.SubmitChanges();
                 return true;
             }
             catch
@@ -95,7 +99,7 @@ namespace BUS
         {
             try
             {
-                DB.sp_UpdateDuLieuDangKi(dangky.MADK, dangky.MASACH, dangky.MADG, dangky.NGAYDK, dangky.GHICHU);
+                SQLDataContext.SQLData.sp_UpdateDuLieuDangKi(dangky.MADK, dangky.MASACH, dangky.MADG, dangky.NGAYDK, dangky.GHICHU);
                 return true;
             }
             catch
@@ -108,7 +112,7 @@ namespace BUS
         {
             try
             {
-                DB.sp_InsertDuLieuDangKi(dangky.MADK, dangky.MASACH, dangky.MADG, dangky.NGAYDK, dangky.GHICHU);
+                SQLDataContext.SQLData.sp_InsertDuLieuDangKi(dangky.MADK, dangky.MASACH, dangky.MADG, dangky.NGAYDK, dangky.GHICHU);
                 return true;
             }
             catch

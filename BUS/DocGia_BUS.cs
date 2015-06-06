@@ -10,7 +10,11 @@ namespace BUS
 {
     public class DocGia_BUS
     {
-        private SQL_QUANLYTHUVIENDataContext db = new SQL_QUANLYTHUVIENDataContext();
+        public DocGia_BUS()
+        {
+            if (!SQLDataContext.IsLoad)
+                SQLDataContext.CreateDataContext();
+        }
 
         public DataTable LayDuLieuDG()
         {
@@ -26,7 +30,7 @@ namespace BUS
             dt.Columns.Add("MALOP", typeof(string));
             dt.Columns.Add("MALOAIDOCGIA", typeof(string));
 
-            var tem = db.SP_LAYDULIEUDG();
+            var tem = SQLDataContext.SQLData.SP_LAYDULIEUDG();
 
             foreach (var i in tem)
             {
@@ -51,7 +55,7 @@ namespace BUS
         {
             try
             {
-                db.SP_THEMDG(dg.MADG, dg.TENDG, dg.GIOITINH, dg.NGAYSINH, dg.NOISINH, dg.DIACHI, dg.DIENTHOAI, dg.EMAIL, dg.MALOP, dg.MALOAIDOCGIA);
+                SQLDataContext.SQLData.SP_THEMDG(dg.MADG, dg.TENDG, dg.GIOITINH, dg.NGAYSINH, dg.NOISINH, dg.DIACHI, dg.DIENTHOAI, dg.EMAIL, dg.MALOP, dg.MALOAIDOCGIA);
                 return true;
             }
             catch
@@ -64,7 +68,7 @@ namespace BUS
         {
             try
             {
-                db.SP_SUADG(dg.MADG, dg.TENDG, dg.GIOITINH, dg.NGAYSINH, dg.NOISINH, dg.DIACHI, dg.DIENTHOAI, dg.EMAIL, dg.MALOP, dg.MALOAIDOCGIA);
+                SQLDataContext.SQLData.SP_SUADG(dg.MADG, dg.TENDG, dg.GIOITINH, dg.NGAYSINH, dg.NOISINH, dg.DIACHI, dg.DIENTHOAI, dg.EMAIL, dg.MALOP, dg.MALOAIDOCGIA);
                 return true;
             }
             catch
@@ -77,7 +81,7 @@ namespace BUS
         {
             try
             {
-                db.SP_XOADG(dg.MADG);
+                SQLDataContext.SQLData.SP_XOADG(dg.MADG);
                 return true;
             }
             catch

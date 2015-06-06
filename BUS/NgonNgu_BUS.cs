@@ -7,25 +7,24 @@ using DAO;
 
 namespace BUS
 {
-    public class Login_BUS
+    public class NgonNgu_BUS
     {
-        public Login_BUS()
+        public NgonNgu_BUS()
         {
             if (!SQLDataContext.IsLoad)
                 SQLDataContext.CreateDataContext();
         }
-        public bool Login(string id, string pass,ref NHANVIEN nhanvien)
+
+        //lay ten ngon ngu
+        public string GetTenNgonNgu(string mann)
         {
             try
             {
-                nhanvien = SQLDataContext.SQLData.NHANVIENs.Where(nv => nv.MANV == id && nv.PASS == pass).FirstOrDefault();
-                if (nhanvien == null)
-                    return false;
-                return true;
+                return SQLDataContext.SQLData.NGONNGUs.Single(nn => nn.MANGONNGU == mann).TENNGONNGU;
             }
             catch
             {
-                return true;
+                return "";
             }
         }
     }

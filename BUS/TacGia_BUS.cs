@@ -10,7 +10,11 @@ namespace BUS
 {
     public class TacGia_BUS
     {
-        private SQL_QUANLYTHUVIENDataContext db = new SQL_QUANLYTHUVIENDataContext();
+        public TacGia_BUS()
+        {
+            if (!SQLDataContext.IsLoad)
+                SQLDataContext.CreateDataContext();
+        }
 
         public DataTable LayDuLieuTG()
         {
@@ -23,7 +27,7 @@ namespace BUS
             dt.Columns.Add("EMAIL", typeof(string));
             dt.Columns.Add("GHICHU", typeof(string));
 
-            var tem = db.SP_LAYDULIEUTG();
+            var tem = SQLDataContext.SQLData.SP_LAYDULIEUTG();
 
             foreach (var i in tem)
             {
@@ -45,7 +49,7 @@ namespace BUS
         {
             try
             {
-                db.SP_THEMTG(tg.MATG, tg.TENTG, tg.DIACHI, tg.DIENTHOAI, tg.FAX, tg.EMAIL, tg.GHICHU);
+                SuaTG(tg);
                 return true;
             }
             catch
@@ -58,7 +62,7 @@ namespace BUS
         {
             try
             {
-                db.SP_SUATG(tg.MATG, tg.TENTG, tg.DIACHI, tg.DIENTHOAI, tg.FAX, tg.EMAIL, tg.GHICHU);
+                SQLDataContext.SQLData.SP_SUATG(tg.MATG, tg.TENTG, tg.DIACHI, tg.DIENTHOAI, tg.FAX, tg.EMAIL, tg.GHICHU);
                 return true;
             }
             catch
@@ -71,12 +75,76 @@ namespace BUS
         {
             try
             {
-                db.SP_XOATG(tg.MATG);
+                SQLDataContext.SQLData.SP_XOATG(tg.MATG);
                 return true;
             }
             catch
             {
                 return false;
+            }
+        }
+        public string LayTenTG(string matg)
+        {
+            try
+            {
+                return SQLDataContext.SQLData.TACGIAs.Single(tg => tg.MATG == matg).TENTG;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        public string LayMaTG(string tentg)
+        {
+            try
+            {
+                return SQLDataContext.SQLData.TACGIAs.Single(tg => tg.TENTG == tentg).MATG;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+        //lay ma sach lon nhat
+        public string GetMaTGMax()
+        {
+            string matg = "";
+            try
+            {
+                //string masach = ""; 
+                int maso;
+                SQLDataContext.SQLData.sp_getMaTGMax(ref matg);
+                maso = int.Parse(matg.Substring(2)) + 1;
+                if (maso.ToString().Length == 1)
+                    matg = "TG00" + maso.ToString();
+                else if (maso.ToString().Length == 2)
+                    matg = "TG0" + maso.ToString();
+                else matg = "TG" + maso.ToString();
+
+                SQLDataContext.CreateDataContext();
+                TACGIA tg = new TACGIA();
+                tg.MATG = matg;
+                SQLDataContext.SQLData.TACGIAs.InsertOnSubmit(tg);
+                SQLDataContext.SQLData.SubmitChanges();
+                return matg;
+            }
+            catch
+            {
+                return "demo";
+            }
+        }
+        //delete ma sach rong
+        public void DeleteMaTGMax()
+        {
+            try
+            {
+                TACGIA tacgia = SQLDataContext.SQLData.TACGIAs.Single(tg =>tg.TENTG == null);
+                SQLDataContext.SQLData.TACGIAs.DeleteOnSubmit(tacgia);
+                SQLDataContext.SQLData.SubmitChanges();
+            }
+            catch
+            {
+
             }
         }
     }

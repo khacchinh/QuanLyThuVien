@@ -9,11 +9,15 @@ namespace BUS
 {
     public class QuiDinh_Bus
     {
-        private SQL_QUANLYTHUVIENDataContext DB = new SQL_QUANLYTHUVIENDataContext();
+        public QuiDinh_Bus()
+        {
+            if (!SQLDataContext.IsLoad)
+                SQLDataContext.CreateDataContext();
+        }
 
         public List<QUIDINH> LoadDuLieuQD()
         {
-            return DB.QUIDINHs.ToList();
+            return SQLDataContext.SQLData.QUIDINHs.ToList();
         }
     }
 }

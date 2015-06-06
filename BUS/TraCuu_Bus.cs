@@ -10,7 +10,11 @@ namespace BUS
 {
     public class TraCuu_Bus
     {
-        private SQL_QUANLYTHUVIENDataContext DB = new SQL_QUANLYTHUVIENDataContext();
+        public TraCuu_Bus()
+        {
+            if (!SQLDataContext.IsLoad)
+                SQLDataContext.CreateDataContext();
+        }
 
         #region tra cứu sách
         //tra cuu tai lieu theo ma sach
@@ -33,7 +37,7 @@ namespace BUS
             dt.Columns.Add("SLDANGMUON", typeof(string));
             dt.Columns.Add("TINHTRANG", typeof(string));
 
-            var phieumuon = DB.sp_TimDauSachTheoMaTaiLieu(masach);
+            var phieumuon = SQLDataContext.SQLData.sp_TimDauSachTheoMaTaiLieu(masach);
             int c = 1, slsachmuon = 0;
 
             foreach (var i in phieumuon)
@@ -85,7 +89,7 @@ namespace BUS
             dt.Columns.Add("SLDANGMUON", typeof(string));
             dt.Columns.Add("TINHTRANG", typeof(string));
 
-            var phieumuon = DB.sp_TimDauSachTheoTenTaiLieu(tensach);
+            var phieumuon = SQLDataContext.SQLData.sp_TimDauSachTheoTenTaiLieu(tensach);
             int c = 1, slsachmuon = 0;
 
             foreach (var i in phieumuon)
@@ -137,7 +141,7 @@ namespace BUS
             dt.Columns.Add("SLDANGMUON", typeof(string));
             dt.Columns.Add("TINHTRANG", typeof(string));
 
-            var phieumuon = DB.sp_TimDauSachTheoTacGia(tentg);
+            var phieumuon = SQLDataContext.SQLData.sp_TimDauSachTheoTacGia(tentg);
             int c = 1, slsachmuon = 0;
 
             foreach (var i in phieumuon)
@@ -189,7 +193,7 @@ namespace BUS
             dt.Columns.Add("SLDANGMUON", typeof(string));
             dt.Columns.Add("TINHTRANG", typeof(string));
 
-            var phieumuon = DB.sp_TimDauSachTheoTenTheLoai(tentheloai);
+            var phieumuon = SQLDataContext.SQLData.sp_TimDauSachTheoTenTheLoai(tentheloai);
             int c = 1, slsachmuon =0;
 
             foreach (var i in phieumuon)
@@ -241,7 +245,7 @@ namespace BUS
             dt.Columns.Add("SLDANGMUON", typeof(string));
             dt.Columns.Add("TINHTRANG", typeof(string));
 
-            var phieumuon = DB.sp_TimDauSachTheoTenNXB(nxb);
+            var phieumuon = SQLDataContext.SQLData.sp_TimDauSachTheoTenNXB(nxb);
             int c = 1, slsachmuon;
 
             foreach (var i in phieumuon)
@@ -293,7 +297,7 @@ namespace BUS
             dt.Columns.Add("TENLOP", typeof(string));
             dt.Columns.Add("TENKHOA", typeof(string));
 
-            var phieumuon = DB.sp_TimDocGiaTheoMSSV(madg);
+            var phieumuon = SQLDataContext.SQLData.sp_TimDocGiaTheoMSSV(madg);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -336,7 +340,7 @@ namespace BUS
             dt.Columns.Add("TENLOP", typeof(string));
             dt.Columns.Add("TENKHOA", typeof(string));
 
-            var phieumuon = DB.sp_TimDocGiaTheoMaGV(madg);
+            var phieumuon = SQLDataContext.SQLData.sp_TimDocGiaTheoMaGV(madg);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -379,7 +383,7 @@ namespace BUS
             dt.Columns.Add("TENLOP", typeof(string));
             dt.Columns.Add("TENKHOA", typeof(string));
 
-            var phieumuon = DB.sp_TimDocGiaTheoHoTen(hoten);
+            var phieumuon = SQLDataContext.SQLData.sp_TimDocGiaTheoHoTen(hoten);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -422,7 +426,7 @@ namespace BUS
             dt.Columns.Add("TENLOP", typeof(string));
             dt.Columns.Add("TENKHOA", typeof(string));
 
-            var phieumuon = DB.sp_TimDocGiaTheoLop(tenlop);
+            var phieumuon = SQLDataContext.SQLData.sp_TimDocGiaTheoLop(tenlop);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -465,7 +469,7 @@ namespace BUS
             dt.Columns.Add("TENLOP", typeof(string));
             dt.Columns.Add("TENKHOA", typeof(string));
 
-            var phieumuon = DB.sp_TimDocGiaTheoKhoa(tenkhoa);
+            var phieumuon = SQLDataContext.SQLData.sp_TimDocGiaTheoKhoa(tenkhoa);
             int c = 1;
 
             foreach (var i in phieumuon)

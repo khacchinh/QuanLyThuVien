@@ -47,6 +47,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SQLDataContext.cs" />
     <Compile Include="SQL_QUANLYTHUVIEN.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

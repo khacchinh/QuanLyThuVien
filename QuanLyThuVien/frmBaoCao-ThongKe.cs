@@ -13,7 +13,6 @@ namespace QuanLyThuVien
 {
     public partial class frmBaoCao_ThongKe : Form
     {
-        private BaoCao_ThongKe_Bus bc_tk = new BaoCao_ThongKe_Bus();
         public frmBaoCao_ThongKe()
         {
             InitializeComponent();
@@ -34,37 +33,45 @@ namespace QuanLyThuVien
         }
         private void frmBaoCao_ThongKe_Load(object sender, EventArgs e)
         {
+            DeleteDataNull();
             LoadDuLieuTacGia();
             LoadDuLieuNXB();
             LoadDuLieuTheLoai();
             LoadDuLieuSach();
             LoadDuLieuDocGiaQuaHan();
         }
+        private void DeleteDataNull()
+        {
+            DataBase.Sach.DeleteMaSachMax();
+            DataBase.NXB.DeleteMaNXBMax();
+            DataBase.ChuyenMuc.DeleteMaCMMax();
+            DataBase.TheLoai.DeleteMaTLMax();
+            DataBase.TacGia.DeleteMaTGMax();
+        }
 
         private void LoadDuLieuSach()
         {
-            m_dgvSach.DataSource = bc_tk.LoadDuLieuSach();
+            m_dgvSach.DataSource = DataBase.BaoCao.LoadDuLieuSach();
         }
 
         private void LoadDuLieuTacGia()
         {
-            m_dgvTacGia.DataSource = bc_tk.LoadDuLieuTacGia();
-            //m_dgvTacGia.Columns.RemoveAt(7);
+            m_dgvTacGia.DataSource = DataBase.BaoCao.LoadDuLieuTacGia();
         }
 
         private void LoadDuLieuNXB()
         {
-            m_dgvNXB.DataSource = bc_tk.LoadDuLieuNXB();
+            m_dgvNXB.DataSource = DataBase.BaoCao.LoadDuLieuNXB();
         }
 
         private void LoadDuLieuTheLoai()
         {
-            m_dgvTheLoai.DataSource = bc_tk.LoadDuLieuTheLoai();
+            m_dgvTheLoai.DataSource = DataBase.BaoCao.LoadDuLieuTheLoai();
         }
 
         private void LoadDuLieuDocGiaQuaHan()
         {
-            m_dgvQuaHan.DataSource = bc_tk.LoadDuLieuDocGiaQuaHan(0,DateTime.Now,DateTime.Now);
+            m_dgvQuaHan.DataSource = DataBase.BaoCao.LoadDuLieuDocGiaQuaHan(0, DateTime.Now, DateTime.Now);
         }
 
         private void m_cbbType_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,7 +85,7 @@ namespace QuanLyThuVien
                     break;
 
                 case "Theo thời gian":
-                    m_dgvQuaHan.DataSource = bc_tk.LoadDuLieuDocGiaQuaHan(1, DateTime.Parse(m_dtpQHTuNgay.Text), DateTime.Parse(m_drpQHDenNgay.Text));
+                    m_dgvQuaHan.DataSource = DataBase.BaoCao.LoadDuLieuDocGiaQuaHan(1, DateTime.Parse(m_dtpQHTuNgay.Text), DateTime.Parse(m_drpQHDenNgay.Text));
                     break;
 
                 default:
@@ -166,12 +173,12 @@ namespace QuanLyThuVien
 
         private void m_dtpQHTuNgay_ValueChanged(object sender, EventArgs e)
         {
-            m_dgvQuaHan.DataSource = bc_tk.LoadDuLieuDocGiaQuaHan(1, DateTime.Parse(m_dtpQHTuNgay.Text), DateTime.Parse(m_drpQHDenNgay.Text));
+            m_dgvQuaHan.DataSource = DataBase.BaoCao.LoadDuLieuDocGiaQuaHan(1, DateTime.Parse(m_dtpQHTuNgay.Text), DateTime.Parse(m_drpQHDenNgay.Text));
         }
 
         private void m_drpQHDenNgay_ValueChanged(object sender, EventArgs e)
         {
-            m_dgvQuaHan.DataSource = bc_tk.LoadDuLieuDocGiaQuaHan(1, DateTime.Parse(m_dtpQHTuNgay.Text), DateTime.Parse(m_drpQHDenNgay.Text));
+            m_dgvQuaHan.DataSource = DataBase.BaoCao.LoadDuLieuDocGiaQuaHan(1, DateTime.Parse(m_dtpQHTuNgay.Text), DateTime.Parse(m_drpQHDenNgay.Text));
         }
 
         private void m_btnMin_Click(object sender, EventArgs e)

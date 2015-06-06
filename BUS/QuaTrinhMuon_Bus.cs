@@ -10,7 +10,10 @@ namespace BUS
 {
     public class QuaTrinhMuon_Bus
     {
-        private SQL_QUANLYTHUVIENDataContext DB = new SQL_QUANLYTHUVIENDataContext();
+        public QuaTrinhMuon_Bus() {
+            if (!SQLDataContext.IsLoad)
+                SQLDataContext.CreateDataContext();
+        }
 
         //lấy thông tin phiếu quá trình mượn(trả sách)
         public DataTable LayduLieuQuaTrinhMuon()
@@ -31,7 +34,7 @@ namespace BUS
             dt.Columns.Add("GHICHU", typeof(string));
             dt.Columns.Add("TRANGTHAI", typeof(string));
 
-            var phieumuon = DB.sp_LayDuLieuQuaTrinhMuon();
+            var phieumuon = SQLDataContext.SQLData.sp_LayDuLieuQuaTrinhMuon();
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -63,7 +66,7 @@ namespace BUS
         public float TienPhat(QUATRINHMUON quatrinhmuon, QUIDINH quidinh, int day)
         {
             double? tienphat = 0;
-            DB.sp_TinhToanTienPhat(quatrinhmuon.MASACH, quidinh.MAQUIDINH,day,ref tienphat);
+            SQLDataContext.SQLData.sp_TinhToanTienPhat(quatrinhmuon.MASACH, quidinh.MAQUIDINH, day, ref tienphat);
             return float.Parse(tienphat.ToString());
         }
 
@@ -72,7 +75,7 @@ namespace BUS
         {
             try
             {
-                DB.sp_InsertduLieuQuaTrinhMuon(quatrinhmuon.MAPHIEUMUON, quatrinhmuon.MADG, quatrinhmuon.MASACH, quatrinhmuon.NGAYMUON, quatrinhmuon.NGAYTRA, quatrinhmuon.SONGAYTRE, quatrinhmuon.LYDO, quatrinhmuon.TIENPHAT, quatrinhmuon.NGAYPHAT, quatrinhmuon.GHICHU);
+                SQLDataContext.SQLData.sp_InsertduLieuQuaTrinhMuon(quatrinhmuon.MAPHIEUMUON, quatrinhmuon.MADG, quatrinhmuon.MASACH, quatrinhmuon.NGAYMUON, quatrinhmuon.NGAYTRA, quatrinhmuon.SONGAYTRE, quatrinhmuon.LYDO, quatrinhmuon.TIENPHAT, quatrinhmuon.NGAYPHAT, quatrinhmuon.GHICHU);
                 return true;
             }
             catch
@@ -86,7 +89,7 @@ namespace BUS
         {
             try
             {
-                DB.sp_DeleteDuLieuQuaTrinhMuon(quatrinhmuon.MAPHIEUMUON);
+                SQLDataContext.SQLData.sp_DeleteDuLieuQuaTrinhMuon(quatrinhmuon.MAPHIEUMUON);
                 return true;
             }
             catch
@@ -100,7 +103,7 @@ namespace BUS
         {
             try
             {
-                DB.sp_UpdateDuLieuQuaTrinhMuon(quatrinhmuon.MAPHIEUMUON, quatrinhmuon.LYDO, quatrinhmuon.NGAYPHAT,quatrinhmuon.SONGAYTRE,quatrinhmuon.TIENPHAT);
+                SQLDataContext.SQLData.sp_UpdateDuLieuQuaTrinhMuon(quatrinhmuon.MAPHIEUMUON, quatrinhmuon.LYDO, quatrinhmuon.NGAYPHAT, quatrinhmuon.SONGAYTRE, quatrinhmuon.TIENPHAT);
                 return true;
             }
             catch
@@ -128,7 +131,7 @@ namespace BUS
             dt.Columns.Add("GHICHU", typeof(string));
             dt.Columns.Add("TRANGTHAI", typeof(string));
 
-            var phieumuon = DB.sp_TimKiemQuaTrinhMuontheoMaPhieu(quatrinhmuon.MAPHIEUMUON,tungay,denngay);
+            var phieumuon = SQLDataContext.SQLData.sp_TimKiemQuaTrinhMuontheoMaPhieu(quatrinhmuon.MAPHIEUMUON, tungay, denngay);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -175,7 +178,7 @@ namespace BUS
             dt.Columns.Add("GHICHU", typeof(string));
             dt.Columns.Add("TRANGTHAI", typeof(string));
 
-            var phieumuon = DB.sp_TimKiemQuaTrinhMuontheoMaDG(quatrinhmuon.MADG, tungay, denngay);
+            var phieumuon = SQLDataContext.SQLData.sp_TimKiemQuaTrinhMuontheoMaDG(quatrinhmuon.MADG, tungay, denngay);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -222,7 +225,7 @@ namespace BUS
             dt.Columns.Add("GHICHU", typeof(string));
             dt.Columns.Add("TRANGTHAI", typeof(string));
 
-            var phieumuon = DB.sp_TimKiemQuaTrinhMuontheoTenDG(tendg, tungay, denngay);
+            var phieumuon = SQLDataContext.SQLData.sp_TimKiemQuaTrinhMuontheoTenDG(tendg, tungay, denngay);
             int c = 1;
 
             foreach (var i in phieumuon)
@@ -269,7 +272,7 @@ namespace BUS
             dt.Columns.Add("GHICHU", typeof(string));
             dt.Columns.Add("TRANGTHAI", typeof(string));
 
-            var phieumuon = DB.sp_TimKiemQuaTrinhMuontheoMaSach(quatrinhmuon.MASACH, tungay, denngay);
+            var phieumuon = SQLDataContext.SQLData.sp_TimKiemQuaTrinhMuontheoMaSach(quatrinhmuon.MASACH, tungay, denngay);
             int c = 1;
 
             foreach (var i in phieumuon)

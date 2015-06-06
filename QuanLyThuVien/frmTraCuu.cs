@@ -13,7 +13,6 @@ namespace QuanLyThuVien
 {
     public partial class frmTraCuu : Form
     {
-        private TraCuu_Bus tc = new TraCuu_Bus();
         public frmTraCuu()
         {
             InitializeComponent();
@@ -70,23 +69,23 @@ namespace QuanLyThuVien
             switch (m_cbbDG.SelectedItem.ToString())
             {
                 case "MSSV":
-                    m_dgvDG.DataSource = tc.TraCuuDGtheoMSSV(int.Parse(m_txtDGSeach.Text));
+                    m_dgvDG.DataSource = DataBase.TraCuu.TraCuuDGtheoMSSV(int.Parse(m_txtDGSeach.Text));
                     break;
 
                 case "Mã giảng viên":
-                    m_dgvDG.DataSource = tc.TraCuuDGtheoMGV(int.Parse(m_txtDGSeach.Text));
+                    m_dgvDG.DataSource = DataBase.TraCuu.TraCuuDGtheoMGV(int.Parse(m_txtDGSeach.Text));
                     break;
 
                 case "Họ tên":
-                    m_dgvDG.DataSource = tc.TraCuuDGtheoHoTen(m_txtDGSeach.Text);
+                    m_dgvDG.DataSource = DataBase.TraCuu.TraCuuDGtheoHoTen(m_txtDGSeach.Text);
                     break;
 
                 case "Lớp":
-                    m_dgvDG.DataSource = tc.TraCuuDGtheoLop(m_txtDGSeach.Text);
+                    m_dgvDG.DataSource = DataBase.TraCuu.TraCuuDGtheoLop(m_txtDGSeach.Text);
                     break;
 
                 case "Khoa":
-                    m_dgvDG.DataSource = tc.TraCuuDGtheoKhoa(m_txtDGSeach.Text);
+                    m_dgvDG.DataSource = DataBase.TraCuu.TraCuuDGtheoKhoa(m_txtDGSeach.Text);
                     break;
 
                 default:
@@ -101,23 +100,23 @@ namespace QuanLyThuVien
             switch (m_cbbTraCuuTL.SelectedItem.ToString())
             {
                 case "Mã tài liệu":
-                    m_dgvTL.DataSource = tc.TraCuuTLtheoMaSach(m_txtTLSeach.Text);
+                    m_dgvTL.DataSource = DataBase.TraCuu.TraCuuTLtheoMaSach(m_txtTLSeach.Text);
                     break;
 
                 case "Tên tài liệu":
-                    m_dgvTL.DataSource = tc.TraCuuTLtheoTenSach(m_txtTLSeach.Text);
+                    m_dgvTL.DataSource = DataBase.TraCuu.TraCuuTLtheoTenSach(m_txtTLSeach.Text);
                     break;
 
                 case "Thể loại":
-                    m_dgvTL.DataSource = tc.TraCuuTLtheoTentheNXB(m_txtTLSeach.Text);
+                    m_dgvTL.DataSource = DataBase.TraCuu.TraCuuTLtheoTentheNXB(m_txtTLSeach.Text);
                     break;
 
                 case "NXB":
-                    m_dgvTL.DataSource = tc.TraCuuTLtheoTentheNXB(m_txtTLSeach.Text);
+                    m_dgvTL.DataSource = DataBase.TraCuu.TraCuuTLtheoTentheNXB(m_txtTLSeach.Text);
                     break;
 
                 case "Tác giả":
-                    m_dgvTL.DataSource = tc.TraCuuTLtheoTenTG(m_txtTLSeach.Text);
+                    m_dgvTL.DataSource = DataBase.TraCuu.TraCuuTLtheoTenTG(m_txtTLSeach.Text);
                     break;
 
                 default:

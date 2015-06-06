@@ -387,17 +387,6 @@
     <Parameter Name="MALOAIDOCGIA" Parameter="mALOAIDOCGIA" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.SP_SUANXB" Method="SP_SUANXB">
-    <Parameter Name="MANXB" Parameter="mANXB" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="TENNXB" Parameter="tENNXB" Type="System.String" DbType="NVarChar(20)" />
-    <Parameter Name="DIACHI" Parameter="dIACHI" Type="System.String" DbType="NVarChar(30)" />
-    <Parameter Name="DIENTHOAI" Parameter="dIENTHOAI" Type="System.String" DbType="VarChar(11)" />
-    <Parameter Name="FAX" Parameter="fAX" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="WEBSITE" Parameter="wEBSITE" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="GHICHU" Parameter="gHICHU" Type="System.String" DbType="NVarChar(200)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.SP_SUASACH" Method="SP_SUASACH">
     <Parameter Name="MASACH" Parameter="mASACH" Type="System.String" DbType="VarChar(5)" />
     <Parameter Name="TENSACH" Parameter="tENSACH" Type="System.String" DbType="NVarChar(30)" />
@@ -445,33 +434,6 @@
     <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(30)" />
     <Parameter Name="MALOP" Parameter="mALOP" Type="System.String" DbType="VarChar(8)" />
     <Parameter Name="MALOAIDOCGIA" Parameter="mALOAIDOCGIA" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.SP_THEMNXB" Method="SP_THEMNXB">
-    <Parameter Name="MANXB" Parameter="mANXB" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="TENNXB" Parameter="tENNXB" Type="System.String" DbType="NVarChar(20)" />
-    <Parameter Name="DIACHI" Parameter="dIACHI" Type="System.String" DbType="NVarChar(30)" />
-    <Parameter Name="DIENTHOAI" Parameter="dIENTHOAI" Type="System.String" DbType="VarChar(11)" />
-    <Parameter Name="FAX" Parameter="fAX" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="EMAIL" Parameter="eMAIL" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="WEBSITE" Parameter="wEBSITE" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="GHICHU" Parameter="gHICHU" Type="System.String" DbType="NVarChar(200)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.SP_THEMSACH" Method="SP_THEMSACH">
-    <Parameter Name="MASACH" Parameter="mASACH" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="TENSACH" Parameter="tENSACH" Type="System.String" DbType="NVarChar(30)" />
-    <Parameter Name="LOAISACH" Parameter="lOAISACH" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="TACGIA" Parameter="tACGIA" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="NN" Parameter="nN" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="SOTRANG" Parameter="sOTRANG" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NXB" Parameter="nXB" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="SOTIEN" Parameter="sOTIEN" Type="System.Decimal" DbType="Money" />
-    <Parameter Name="MAVITRI" Parameter="mAVITRI" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="KHO" Parameter="kHO" Type="System.Int32" DbType="Int" />
-    <Parameter Name="NGAN" Parameter="nGAN" Type="System.Int32" DbType="Int" />
-    <Parameter Name="KE" Parameter="kE" Type="System.Int32" DbType="Int" />
-    <Parameter Name="SL" Parameter="sL" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.SP_THEMTG" Method="SP_THEMTG">
@@ -693,70 +655,6 @@
       <Column Name="TENKHOA" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.sp_TimKiemPhieuMuonTheoMDG" Method="sp_TimKiemPhieuMuonTheoMDG">
-    <Parameter Name="madocgia" Type="System.Int32" DbType="Int" />
-    <Parameter Name="tungay" Type="System.DateTime" DbType="SmallDateTime" />
-    <Parameter Name="denngay" Type="System.DateTime" DbType="SmallDateTime" />
-    <Parameter Name="kt" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_TimKiemPhieuMuonTheoMDGResult">
-      <Column Name="MAPHIEUMUON" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="MADG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TENDG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="MASACH" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="TENSACH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="NGAYMUON" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_TimKiemPhieuMuonTheoMPM" Method="sp_TimKiemPhieuMuonTheoMPM">
-    <Parameter Name="mapm" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="tungay" Type="System.DateTime" DbType="SmallDateTime" />
-    <Parameter Name="denngay" Type="System.DateTime" DbType="SmallDateTime" />
-    <Parameter Name="kt" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_TimKiemPhieuMuonTheoMPMResult">
-      <Column Name="MAPHIEUMUON" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="MADG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TENDG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="MASACH" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="TENSACH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="NGAYMUON" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_TimKiemPhieuMuonTheoMS" Method="sp_TimKiemPhieuMuonTheoMS">
-    <Parameter Name="masach" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="tungay" Type="System.DateTime" DbType="SmallDateTime" />
-    <Parameter Name="denngay" Type="System.DateTime" DbType="SmallDateTime" />
-    <Parameter Name="kt" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_TimKiemPhieuMuonTheoMSResult">
-      <Column Name="MAPHIEUMUON" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="MADG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TENDG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="MASACH" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="TENSACH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="NGAYMUON" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.sp_TimKiemPhieuMuonTheoTenDG" Method="sp_TimKiemPhieuMuonTheoTenDG">
-    <Parameter Name="tendg" Type="System.String" DbType="NVarChar(30)" />
-    <Parameter Name="tungay" Type="System.DateTime" DbType="SmallDateTime" />
-    <Parameter Name="denngay" Type="System.DateTime" DbType="SmallDateTime" />
-    <Parameter Name="kt" Type="System.Int32" DbType="Int" />
-    <ElementType Name="sp_TimKiemPhieuMuonTheoTenDGResult">
-      <Column Name="MAPHIEUMUON" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
-      <Column Name="MADG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TENDG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="MASACH" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
-      <Column Name="TENSACH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
-      <Column Name="NGAYMUON" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
-      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.sp_TimKiemPhieuMuonTheoTenTaiLieu" Method="sp_TimKiemPhieuMuonTheoTenTaiLieu">
     <Parameter Name="tensach" Type="System.String" DbType="NVarChar(30)" />
     <ElementType Name="sp_TimKiemPhieuMuonTheoTenTaiLieuResult">
@@ -900,6 +798,90 @@
   </Function>
   <Function Name="dbo.SP_XOATG" Method="SP_XOATG">
     <Parameter Name="MATG" Parameter="mATG" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_getMaPMMax" Method="sp_getMaPMMax">
+    <Parameter Name="mapm" Type="System.String" DbType="VarChar(6)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_TimKiemPhieuMuonTheoMPM" Method="sp_TimKiemPhieuMuonTheoMPM">
+    <Parameter Name="mapm" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="tungay" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="denngay" Type="System.DateTime" DbType="SmallDateTime" />
+    <ElementType Name="sp_TimKiemPhieuMuonTheoMPMResult">
+      <Column Name="MAPHIEUMUON" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="MADG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TENDG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MASACH" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TENSACH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NGAYMUON" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_TimKiemPhieuMuonTheoMDG" Method="sp_TimKiemPhieuMuonTheoMDG">
+    <Parameter Name="madocgia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="tungay" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="denngay" Type="System.DateTime" DbType="SmallDateTime" />
+    <ElementType Name="sp_TimKiemPhieuMuonTheoMDGResult">
+      <Column Name="MAPHIEUMUON" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="MADG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TENDG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MASACH" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TENSACH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NGAYMUON" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_TimKiemPhieuMuonTheoTenDG" Method="sp_TimKiemPhieuMuonTheoTenDG">
+    <Parameter Name="tendg" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="tungay" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="denngay" Type="System.DateTime" DbType="SmallDateTime" />
+    <ElementType Name="sp_TimKiemPhieuMuonTheoTenDGResult">
+      <Column Name="MAPHIEUMUON" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="MADG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TENDG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MASACH" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TENSACH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NGAYMUON" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_TimKiemPhieuMuonTheoMS" Method="sp_TimKiemPhieuMuonTheoMS">
+    <Parameter Name="masach" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="tungay" Type="System.DateTime" DbType="SmallDateTime" />
+    <Parameter Name="denngay" Type="System.DateTime" DbType="SmallDateTime" />
+    <ElementType Name="sp_TimKiemPhieuMuonTheoMSResult">
+      <Column Name="MAPHIEUMUON" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="MADG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TENDG" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MASACH" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TENSACH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NGAYMUON" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="NGAYTRA" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_getMaSachMax" Method="sp_getMaSachMax">
+    <Parameter Name="masach" Type="System.String" DbType="VarChar(5)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_getMaNXBMax" Method="sp_getMaNXBMax">
+    <Parameter Name="nxb" Type="System.String" DbType="VarChar(6)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_getMaCMMax" Method="sp_getMaCMMax">
+    <Parameter Name="chuyenmuc" Type="System.String" DbType="VarChar(5)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_getMaTLMax" Method="sp_getMaTLMax">
+    <Parameter Name="theloai" Type="System.String" DbType="VarChar(6)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_getMaTGMax" Method="sp_getMaTGMax">
+    <Parameter Name="matg" Type="System.String" DbType="VarChar(5)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

@@ -36,21 +36,23 @@
             this.m_btnThemS = new System.Windows.Forms.Button();
             this.m_dgvSach = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.m_cbbKe = new System.Windows.Forms.ComboBox();
+            this.m_cbbNgan = new System.Windows.Forms.ComboBox();
+            this.m_cbbKho = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.m_txtKe = new System.Windows.Forms.TextBox();
-            this.m_txtNgan = new System.Windows.Forms.TextBox();
-            this.m_txtKho = new System.Windows.Forms.TextBox();
             this.m_txtMaVT = new System.Windows.Forms.TextBox();
             this.m_cbbNN = new System.Windows.Forms.ComboBox();
             this.m_cbbNXB = new System.Windows.Forms.ComboBox();
             this.m_cbbLoaiSach = new System.Windows.Forms.ComboBox();
+            this.m_txtSoluong = new System.Windows.Forms.TextBox();
             this.m_txtSoTien = new System.Windows.Forms.TextBox();
             this.m_txtMaTacGiaS = new System.Windows.Forms.TextBox();
             this.m_txtSoTrang = new System.Windows.Forms.TextBox();
             this.m_txtTenSach = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.m_txtMaSach = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -91,7 +93,6 @@
             this.m_btnSuaTL = new System.Windows.Forms.Button();
             this.m_btnLuuTL = new System.Windows.Forms.Button();
             this.m_btnThemTL = new System.Windows.Forms.Button();
-            this.m_txtTLMCM = new System.Windows.Forms.TextBox();
             this.m_txtTenTheLoai = new System.Windows.Forms.TextBox();
             this.m_txtMaTheLoai = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -128,6 +129,7 @@
             this.m_tpDG = new System.Windows.Forms.TabPage();
             this.m_btnMin = new System.Windows.Forms.Button();
             this.m_btnClose = new System.Windows.Forms.Button();
+            this.m_cbbTLCM = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.m_tpSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dgvSach)).BeginInit();
@@ -169,10 +171,12 @@
             this.m_tpSach.Controls.Add(this.m_cbbNN);
             this.m_tpSach.Controls.Add(this.m_cbbNXB);
             this.m_tpSach.Controls.Add(this.m_cbbLoaiSach);
+            this.m_tpSach.Controls.Add(this.m_txtSoluong);
             this.m_tpSach.Controls.Add(this.m_txtSoTien);
             this.m_tpSach.Controls.Add(this.m_txtMaTacGiaS);
             this.m_tpSach.Controls.Add(this.m_txtSoTrang);
             this.m_tpSach.Controls.Add(this.m_txtTenSach);
+            this.m_tpSach.Controls.Add(this.label35);
             this.m_tpSach.Controls.Add(this.m_txtMaSach);
             this.m_tpSach.Controls.Add(this.label8);
             this.m_tpSach.Controls.Add(this.label6);
@@ -197,7 +201,7 @@
             this.m_btnXoaS.FlatAppearance.BorderSize = 0;
             this.m_btnXoaS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_btnXoaS.ForeColor = System.Drawing.Color.White;
-            this.m_btnXoaS.Location = new System.Drawing.Point(520, 210);
+            this.m_btnXoaS.Location = new System.Drawing.Point(520, 217);
             this.m_btnXoaS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_btnXoaS.Name = "m_btnXoaS";
             this.m_btnXoaS.Size = new System.Drawing.Size(120, 52);
@@ -212,7 +216,7 @@
             this.m_btnSuaS.FlatAppearance.BorderSize = 0;
             this.m_btnSuaS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_btnSuaS.ForeColor = System.Drawing.Color.White;
-            this.m_btnSuaS.Location = new System.Drawing.Point(349, 210);
+            this.m_btnSuaS.Location = new System.Drawing.Point(349, 217);
             this.m_btnSuaS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_btnSuaS.Name = "m_btnSuaS";
             this.m_btnSuaS.Size = new System.Drawing.Size(120, 52);
@@ -227,7 +231,7 @@
             this.m_btnLuuS.FlatAppearance.BorderSize = 0;
             this.m_btnLuuS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_btnLuuS.ForeColor = System.Drawing.Color.White;
-            this.m_btnLuuS.Location = new System.Drawing.Point(189, 210);
+            this.m_btnLuuS.Location = new System.Drawing.Point(189, 217);
             this.m_btnLuuS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_btnLuuS.Name = "m_btnLuuS";
             this.m_btnLuuS.Size = new System.Drawing.Size(120, 52);
@@ -242,7 +246,7 @@
             this.m_btnThemS.FlatAppearance.BorderSize = 0;
             this.m_btnThemS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_btnThemS.ForeColor = System.Drawing.Color.White;
-            this.m_btnThemS.Location = new System.Drawing.Point(28, 210);
+            this.m_btnThemS.Location = new System.Drawing.Point(28, 217);
             this.m_btnThemS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_btnThemS.Name = "m_btnThemS";
             this.m_btnThemS.Size = new System.Drawing.Size(120, 52);
@@ -268,15 +272,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.m_cbbKe);
+            this.groupBox1.Controls.Add(this.m_cbbNgan);
+            this.groupBox1.Controls.Add(this.m_cbbKho);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.m_txtKe);
-            this.groupBox1.Controls.Add(this.m_txtNgan);
-            this.groupBox1.Controls.Add(this.m_txtKho);
             this.groupBox1.Controls.Add(this.m_txtMaVT);
-            this.groupBox1.Location = new System.Drawing.Point(747, 5);
+            this.groupBox1.Location = new System.Drawing.Point(707, 4);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -285,10 +289,37 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vị trí:";
             // 
+            // m_cbbKe
+            // 
+            this.m_cbbKe.FormattingEnabled = true;
+            this.m_cbbKe.Location = new System.Drawing.Point(85, 105);
+            this.m_cbbKe.Name = "m_cbbKe";
+            this.m_cbbKe.Size = new System.Drawing.Size(175, 24);
+            this.m_cbbKe.TabIndex = 3;
+            this.m_cbbKe.SelectedIndexChanged += new System.EventHandler(this.m_cbbKe_SelectedIndexChanged);
+            // 
+            // m_cbbNgan
+            // 
+            this.m_cbbNgan.FormattingEnabled = true;
+            this.m_cbbNgan.Location = new System.Drawing.Point(85, 141);
+            this.m_cbbNgan.Name = "m_cbbNgan";
+            this.m_cbbNgan.Size = new System.Drawing.Size(175, 24);
+            this.m_cbbNgan.TabIndex = 3;
+            this.m_cbbNgan.SelectedIndexChanged += new System.EventHandler(this.m_cbbNgan_SelectedIndexChanged);
+            // 
+            // m_cbbKho
+            // 
+            this.m_cbbKho.FormattingEnabled = true;
+            this.m_cbbKho.Location = new System.Drawing.Point(85, 61);
+            this.m_cbbKho.Name = "m_cbbKho";
+            this.m_cbbKho.Size = new System.Drawing.Size(175, 24);
+            this.m_cbbKho.TabIndex = 3;
+            this.m_cbbKho.SelectedIndexChanged += new System.EventHandler(this.m_cbbKho_SelectedIndexChanged);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(51, 145);
+            this.label12.Location = new System.Drawing.Point(51, 110);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 17);
             this.label12.TabIndex = 1;
@@ -297,7 +328,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(37, 110);
+            this.label11.Location = new System.Drawing.Point(37, 145);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 17);
             this.label11.TabIndex = 1;
@@ -321,46 +352,20 @@
             this.label9.TabIndex = 1;
             this.label9.Text = "Mã vị trí:";
             // 
-            // m_txtKe
-            // 
-            this.m_txtKe.Location = new System.Drawing.Point(85, 137);
-            this.m_txtKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.m_txtKe.Multiline = true;
-            this.m_txtKe.Name = "m_txtKe";
-            this.m_txtKe.Size = new System.Drawing.Size(175, 29);
-            this.m_txtKe.TabIndex = 2;
-            // 
-            // m_txtNgan
-            // 
-            this.m_txtNgan.Location = new System.Drawing.Point(85, 100);
-            this.m_txtNgan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.m_txtNgan.Multiline = true;
-            this.m_txtNgan.Name = "m_txtNgan";
-            this.m_txtNgan.Size = new System.Drawing.Size(175, 29);
-            this.m_txtNgan.TabIndex = 2;
-            // 
-            // m_txtKho
-            // 
-            this.m_txtKho.Location = new System.Drawing.Point(85, 62);
-            this.m_txtKho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.m_txtKho.Multiline = true;
-            this.m_txtKho.Name = "m_txtKho";
-            this.m_txtKho.Size = new System.Drawing.Size(175, 29);
-            this.m_txtKho.TabIndex = 2;
-            // 
             // m_txtMaVT
             // 
             this.m_txtMaVT.Location = new System.Drawing.Point(85, 22);
             this.m_txtMaVT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_txtMaVT.Multiline = true;
             this.m_txtMaVT.Name = "m_txtMaVT";
+            this.m_txtMaVT.ReadOnly = true;
             this.m_txtMaVT.Size = new System.Drawing.Size(175, 29);
             this.m_txtMaVT.TabIndex = 2;
             // 
             // m_cbbNN
             // 
             this.m_cbbNN.FormattingEnabled = true;
-            this.m_cbbNN.Location = new System.Drawing.Point(488, 26);
+            this.m_cbbNN.Location = new System.Drawing.Point(488, 9);
             this.m_cbbNN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_cbbNN.Name = "m_cbbNN";
             this.m_cbbNN.Size = new System.Drawing.Size(185, 24);
@@ -369,25 +374,35 @@
             // m_cbbNXB
             // 
             this.m_cbbNXB.FormattingEnabled = true;
-            this.m_cbbNXB.Location = new System.Drawing.Point(488, 106);
+            this.m_cbbNXB.Location = new System.Drawing.Point(140, 176);
             this.m_cbbNXB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_cbbNXB.Name = "m_cbbNXB";
-            this.m_cbbNXB.Size = new System.Drawing.Size(185, 24);
+            this.m_cbbNXB.Size = new System.Drawing.Size(193, 24);
             this.m_cbbNXB.TabIndex = 3;
             // 
             // m_cbbLoaiSach
             // 
             this.m_cbbLoaiSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_cbbLoaiSach.FormattingEnabled = true;
-            this.m_cbbLoaiSach.Location = new System.Drawing.Point(140, 105);
+            this.m_cbbLoaiSach.Location = new System.Drawing.Point(140, 93);
             this.m_cbbLoaiSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_cbbLoaiSach.Name = "m_cbbLoaiSach";
             this.m_cbbLoaiSach.Size = new System.Drawing.Size(193, 28);
             this.m_cbbLoaiSach.TabIndex = 3;
             // 
+            // m_txtSoluong
+            // 
+            this.m_txtSoluong.Location = new System.Drawing.Point(488, 92);
+            this.m_txtSoluong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_txtSoluong.Multiline = true;
+            this.m_txtSoluong.Name = "m_txtSoluong";
+            this.m_txtSoluong.Size = new System.Drawing.Size(185, 29);
+            this.m_txtSoluong.TabIndex = 2;
+            this.m_txtSoluong.Text = "0";
+            // 
             // m_txtSoTien
             // 
-            this.m_txtSoTien.Location = new System.Drawing.Point(488, 145);
+            this.m_txtSoTien.Location = new System.Drawing.Point(488, 128);
             this.m_txtSoTien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_txtSoTien.Multiline = true;
             this.m_txtSoTien.Name = "m_txtSoTien";
@@ -397,7 +412,7 @@
             // 
             // m_txtMaTacGiaS
             // 
-            this.m_txtMaTacGiaS.Location = new System.Drawing.Point(140, 145);
+            this.m_txtMaTacGiaS.Location = new System.Drawing.Point(140, 133);
             this.m_txtMaTacGiaS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_txtMaTacGiaS.Multiline = true;
             this.m_txtMaTacGiaS.Name = "m_txtMaTacGiaS";
@@ -406,7 +421,7 @@
             // 
             // m_txtSoTrang
             // 
-            this.m_txtSoTrang.Location = new System.Drawing.Point(488, 66);
+            this.m_txtSoTrang.Location = new System.Drawing.Point(488, 49);
             this.m_txtSoTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_txtSoTrang.Multiline = true;
             this.m_txtSoTrang.Name = "m_txtSoTrang";
@@ -416,26 +431,36 @@
             // 
             // m_txtTenSach
             // 
-            this.m_txtTenSach.Location = new System.Drawing.Point(140, 69);
+            this.m_txtTenSach.Location = new System.Drawing.Point(140, 57);
             this.m_txtTenSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_txtTenSach.Multiline = true;
             this.m_txtTenSach.Name = "m_txtTenSach";
             this.m_txtTenSach.Size = new System.Drawing.Size(193, 29);
             this.m_txtTenSach.TabIndex = 2;
             // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(393, 95);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(68, 17);
+            this.label35.TabIndex = 1;
+            this.label35.Text = "Số lượng:";
+            // 
             // m_txtMaSach
             // 
-            this.m_txtMaSach.Location = new System.Drawing.Point(140, 26);
+            this.m_txtMaSach.Location = new System.Drawing.Point(140, 14);
             this.m_txtMaSach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_txtMaSach.Multiline = true;
             this.m_txtMaSach.Name = "m_txtMaSach";
+            this.m_txtMaSach.ReadOnly = true;
             this.m_txtMaSach.Size = new System.Drawing.Size(193, 29);
             this.m_txtMaSach.TabIndex = 2;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(411, 149);
+            this.label8.Location = new System.Drawing.Point(411, 132);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 17);
             this.label8.TabIndex = 1;
@@ -444,7 +469,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(427, 110);
+            this.label6.Location = new System.Drawing.Point(79, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(40, 17);
             this.label6.TabIndex = 1;
@@ -453,7 +478,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(401, 74);
+            this.label5.Location = new System.Drawing.Point(401, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(66, 17);
             this.label5.TabIndex = 1;
@@ -462,7 +487,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 34);
+            this.label2.Location = new System.Drawing.Point(60, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 17);
             this.label2.TabIndex = 0;
@@ -471,7 +496,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(393, 34);
+            this.label7.Location = new System.Drawing.Point(393, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 0;
@@ -480,7 +505,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 149);
+            this.label4.Location = new System.Drawing.Point(48, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 17);
             this.label4.TabIndex = 0;
@@ -489,7 +514,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 110);
+            this.label3.Location = new System.Drawing.Point(52, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 0;
@@ -498,7 +523,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 74);
+            this.label1.Location = new System.Drawing.Point(53, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 0;
@@ -680,6 +705,7 @@
             this.m_txtMaNXB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_txtMaNXB.Multiline = true;
             this.m_txtMaNXB.Name = "m_txtMaNXB";
+            this.m_txtMaNXB.ReadOnly = true;
             this.m_txtMaNXB.Size = new System.Drawing.Size(177, 32);
             this.m_txtMaNXB.TabIndex = 1;
             // 
@@ -757,6 +783,7 @@
             // 
             // m_tpTheLoai
             // 
+            this.m_tpTheLoai.Controls.Add(this.m_cbbTLCM);
             this.m_tpTheLoai.Controls.Add(this.m_rbtnCM);
             this.m_tpTheLoai.Controls.Add(this.m_rbtnTL);
             this.m_tpTheLoai.Controls.Add(this.m_dgvCM);
@@ -765,7 +792,6 @@
             this.m_tpTheLoai.Controls.Add(this.m_btnSuaTL);
             this.m_tpTheLoai.Controls.Add(this.m_btnLuuTL);
             this.m_tpTheLoai.Controls.Add(this.m_btnThemTL);
-            this.m_tpTheLoai.Controls.Add(this.m_txtTLMCM);
             this.m_tpTheLoai.Controls.Add(this.m_txtTenTheLoai);
             this.m_tpTheLoai.Controls.Add(this.m_txtMaTheLoai);
             this.m_tpTheLoai.Controls.Add(this.groupBox2);
@@ -896,15 +922,6 @@
             this.m_btnThemTL.UseVisualStyleBackColor = false;
             this.m_btnThemTL.Click += new System.EventHandler(this.m_btnThemTL_Click);
             // 
-            // m_txtTLMCM
-            // 
-            this.m_txtTLMCM.Location = new System.Drawing.Point(163, 130);
-            this.m_txtTLMCM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.m_txtTLMCM.Multiline = true;
-            this.m_txtTLMCM.Name = "m_txtTLMCM";
-            this.m_txtTLMCM.Size = new System.Drawing.Size(196, 31);
-            this.m_txtTLMCM.TabIndex = 2;
-            // 
             // m_txtTenTheLoai
             // 
             this.m_txtTenTheLoai.Location = new System.Drawing.Point(163, 86);
@@ -920,6 +937,7 @@
             this.m_txtMaTheLoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_txtMaTheLoai.Multiline = true;
             this.m_txtMaTheLoai.Name = "m_txtMaTheLoai";
+            this.m_txtMaTheLoai.ReadOnly = true;
             this.m_txtMaTheLoai.Size = new System.Drawing.Size(196, 31);
             this.m_txtMaTheLoai.TabIndex = 2;
             // 
@@ -971,6 +989,7 @@
             this.m_txtCMMCM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_txtCMMCM.Multiline = true;
             this.m_txtCMMCM.Name = "m_txtCMMCM";
+            this.m_txtCMMCM.ReadOnly = true;
             this.m_txtCMMCM.Size = new System.Drawing.Size(196, 31);
             this.m_txtCMMCM.TabIndex = 2;
             // 
@@ -1212,6 +1231,7 @@
             this.m_txtMaTG.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.m_txtMaTG.Multiline = true;
             this.m_txtMaTG.Name = "m_txtMaTG";
+            this.m_txtMaTG.ReadOnly = true;
             this.m_txtMaTG.Size = new System.Drawing.Size(185, 29);
             this.m_txtMaTG.TabIndex = 1;
             // 
@@ -1298,6 +1318,15 @@
             this.m_btnClose.UseVisualStyleBackColor = false;
             this.m_btnClose.Click += new System.EventHandler(this.m_btnClose_Click);
             // 
+            // m_cbbTLCM
+            // 
+            this.m_cbbTLCM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_cbbTLCM.FormattingEnabled = true;
+            this.m_cbbTLCM.Location = new System.Drawing.Point(163, 130);
+            this.m_cbbTLCM.Name = "m_cbbTLCM";
+            this.m_cbbTLCM.Size = new System.Drawing.Size(196, 30);
+            this.m_cbbTLCM.TabIndex = 6;
+            // 
             // frmCapNhat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1367,14 +1396,11 @@
         private System.Windows.Forms.TextBox m_txtSoTrang;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox m_txtMaVT;
-        private System.Windows.Forms.TextBox m_txtKho;
         private System.Windows.Forms.Button m_btnXoaS;
         private System.Windows.Forms.Button m_btnSuaS;
         private System.Windows.Forms.Button m_btnLuuS;
         private System.Windows.Forms.Button m_btnThemS;
         private System.Windows.Forms.DataGridView m_dgvSach;
-        private System.Windows.Forms.TextBox m_txtKe;
-        private System.Windows.Forms.TextBox m_txtNgan;
         private System.Windows.Forms.Button m_btnXoaNXB;
         private System.Windows.Forms.Button m_btnSuaNXB;
         private System.Windows.Forms.Button m_btnLuuNXB;
@@ -1404,7 +1430,6 @@
         private System.Windows.Forms.Button m_btnSuaTL;
         private System.Windows.Forms.Button m_btnLuuTL;
         private System.Windows.Forms.Button m_btnThemTL;
-        private System.Windows.Forms.TextBox m_txtTLMCM;
         private System.Windows.Forms.TextBox m_txtTenTheLoai;
         private System.Windows.Forms.TextBox m_txtMaTheLoai;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -1440,5 +1465,11 @@
         private System.Windows.Forms.Button m_btnLuuTG;
         private System.Windows.Forms.Button m_btnMin;
         private System.Windows.Forms.Button m_btnClose;
+        private System.Windows.Forms.ComboBox m_cbbKe;
+        private System.Windows.Forms.ComboBox m_cbbNgan;
+        private System.Windows.Forms.ComboBox m_cbbKho;
+        private System.Windows.Forms.TextBox m_txtSoluong;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ComboBox m_cbbTLCM;
     }
 }

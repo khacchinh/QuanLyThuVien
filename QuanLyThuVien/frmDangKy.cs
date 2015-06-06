@@ -14,8 +14,7 @@ namespace QuanLyThuVien
 {
     public partial class frmDangKy : Form
     {
-        static public DAUSACH dausach = new DAUSACH();
-        private DangKy_BUS dk = new DangKy_BUS();
+        public static DAUSACH dausach = new DAUSACH();
         private DANGKY dangky = new DANGKY();
         public frmDangKy()
         {
@@ -37,7 +36,7 @@ namespace QuanLyThuVien
         }
         private void LoadDuLieuDangKy()
         {
-            m_dgvDK.DataSource = dk.LoadDuLieuDangKy();
+            m_dgvDK.DataSource = DataBase.DangKy.LoadDuLieuDangKy();
             if(dausach.MASACH!=null)
                 m_txtMaTL.Text = dausach.MASACH;
         }
@@ -80,7 +79,7 @@ namespace QuanLyThuVien
             }
             if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Cancel)
                 return;
-            if (dk.DeleteDuLieuDangKy(m_txtMaDK.Text))
+            if (DataBase.DangKy.DeleteDuLieuDangKy(m_txtMaDK.Text))
             {
                 MessageBox.Show("Thành công");
                 LoadDuLieuDangKy();
@@ -93,12 +92,12 @@ namespace QuanLyThuVien
         private void m_txtMadocgia_TextChanged(object sender, EventArgs e)
         {
             if (m_txtMadocgia.Text != "")
-                m_txtTenDG.Text = dk.LoadTenDocGia(int.Parse(m_txtMadocgia.Text));
+                m_txtTenDG.Text = DataBase.DangKy.LoadTenDocGia(int.Parse(m_txtMadocgia.Text));
         }
 
         private void m_txtMaTL_TextChanged(object sender, EventArgs e)
         {
-            m_txtTenTL.Text = dk.LoadTenTaiLieu(m_txtMaTL.Text);
+            m_txtTenTL.Text = DataBase.DangKy.LoadTenTaiLieu(m_txtMaTL.Text);
         }
 
         private void m_btnSua_Click(object sender, EventArgs e)
@@ -117,10 +116,10 @@ namespace QuanLyThuVien
             if (m_dtpNgayDK.Text != "")
                 dangky.NGAYDK = DateTime.Parse(m_dtpNgayDK.Text);
             dangky.GHICHU = m_rtbGhiChu.Text;
-            if (dk.UpdateDuLieuDangKy(dangky))
+            if (DataBase.DangKy.UpdateDuLieuDangKy(dangky))
             {
                 MessageBox.Show("Thành công");
-                m_dgvDK.DataSource = dk.LoadDuLieuDangKy1();
+                m_dgvDK.DataSource = DataBase.DangKy.LoadDuLieuDangKy1();
                 return;
             }
             MessageBox.Show("Thất bại");
@@ -140,7 +139,7 @@ namespace QuanLyThuVien
             if (m_dtpNgayDK.Text != "")
                 dangky.NGAYDK = DateTime.Parse(m_dtpNgayDK.Text);
             dangky.GHICHU = m_rtbGhiChu.Text;
-            if (dk.InsertDuLieuDangKy(dangky))
+            if (DataBase.DangKy.InsertDuLieuDangKy(dangky))
             {
                 LoadDuLieuDangKy();
                 MessageBox.Show("Thành công");

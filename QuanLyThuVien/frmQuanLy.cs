@@ -16,14 +16,12 @@ namespace QuanLyThuVien
     {
         
         #region Khai báo một số biến
-        private PhieuMuon_Bus pm = new PhieuMuon_Bus();
-        private QuaTrinhMuon_Bus qtm = new QuaTrinhMuon_Bus();
         private MUONSACH muonsach = new MUONSACH();
         private QUATRINHMUON quatrinhmuon = new QUATRINHMUON();
         private QUIDINH quidinh = new QUIDINH();
         private DataGridViewRow m_selectRow = new DataGridViewRow();
-        private QuiDinh_Bus qd = new QuiDinh_Bus();
         private bool m_check = false;
+        private string maxmapm = "";
         #endregion
 
         #region Các hàm cho form load
@@ -45,6 +43,7 @@ namespace QuanLyThuVien
             m_lblMaNV.Text = frmMain.nhanvien.MANV;
             m_lblTenNV.Text = frmMain.nhanvien.TENNV;
             m_lblChucVu.Text = frmMain.nhanvien.CHUCVU;
+ 
         }
         private void LoadDuLieuDK(DataGridViewRow row)
         {
@@ -59,15 +58,15 @@ namespace QuanLyThuVien
         //tab quản lý phiếu mượn
         private void LoadDuLieuPhieuMuon()
         {
-            m_dgvPM.DataSource = pm.LayDuLieuMuonSach();
+            m_dgvPM.DataSource = DataBase.PhieuMuon.LayDuLieuMuonSach();
         }
         //tab quản lý phiếu trả
         private void LoadDuLieuQuaTrinhMuon()
         {
-            m_dgvPT.DataSource = qtm.LayduLieuQuaTrinhMuon();
+            m_dgvPT.DataSource = DataBase.QuaTrinhMuon.LayduLieuQuaTrinhMuon();
 
             //
-            m_cbbPTHH.DataSource = qd.LoadDuLieuQD();
+            m_cbbPTHH.DataSource = DataBase.QuiDinh.LoadDuLieuQD();
             m_cbbPTHH.DisplayMember = "TENQUIDINH";
             m_cbbPTHH.ValueMember = "MAQUIDINH";
         }
@@ -83,7 +82,7 @@ namespace QuanLyThuVien
             int day = (ngaytra - ngayhen).Days;
             quatrinhmuon.MASACH = m_txtPTMaSach.Text;
             quidinh.MAQUIDINH = m_cbbPTHH.SelectedValue.ToString();
-            float tienphat = qtm.TienPhat(quatrinhmuon, quidinh, day);
+            float tienphat = DataBase.QuaTrinhMuon.TienPhat(quatrinhmuon, quidinh, day);
             m_txtPTTienPhat.Text = tienphat.ToString();
             if (day > 0)
                 m_txtPTsoNgayTre.Text = day.ToString();
@@ -137,9 +136,9 @@ namespace QuanLyThuVien
         /// <param name="e"></param>
         private void m_btnPMSendPT_Click(object sender, EventArgs e)
         {
-            if (m_txtPMMaPhieuMuon.Text == "")
+            if (m_txtPMMaPhieuMuon.Text == "" || m_txtPMDG.Text == "")
             {
-                MessageBox.Show("Chọn thông tin cần xóa!!", "Thông báo");
+                MessageBox.Show("Chọn thông tin cần thao tac!!", "Thông báo");
                 return;
             }
             m_tpMainQuanLy.SelectedIndex = 1;
@@ -216,9 +215,10 @@ namespace QuanLyThuVien
         }
         private void m_btnPMThem_Click(object sender, EventArgs e)
         {
+            if(maxmapm=="")
+                maxmapm = DataBase.PhieuMuon.GetMaPMMax(); 
+            m_txtPMMaPhieuMuon.Text = maxmapm;
             m_btnPMLuu.Enabled = true;
-            m_txtPMMaPhieuMuon.ReadOnly = false;
-            m_txtPMMaPhieuMuon.Text = "";
             m_txtPMDG.Text = "";
             m_txtPMHoTen.Text = "";
             m_txtPMSach.Text = "";
@@ -235,8 +235,6 @@ namespace QuanLyThuVien
                 MessageBox.Show("Chọn thông tin cần sửa!!", "Thông báo");
                 return;
             }
-            m_txtPMMaPhieuMuon.ReadOnly = true;
-            //
             muonsach.MAPHIEUMUON = m_txtPMMaPhieuMuon.Text.ToUpper();
             muonsach.MADG = int.Parse(m_txtPMDG.Text);
             muonsach.MASACH = m_txtPMSach.Text.ToUpper();
@@ -244,8 +242,9 @@ namespace QuanLyThuVien
             muonsach.NGAYTRA = DateTime.Parse(m_dtpPMNgayTra.Text);
             muonsach.GHICHU = m_rtbPMGhiChu.Text;
             if (MessageBox.Show("Bạn có muốn sửa không ?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.Cancel) return;
-            if (pm.UpdateDuLieuPhieuMuon(muonsach))
+            if (DataBase.PhieuMuon.UpdateDuLieuPhieuMuon(muonsach))
             {
+                maxmapm = "";
                 LoadDuLieuPhieuMuon();
                 MessageBox.Show("Thành công");
             }
@@ -261,8 +260,9 @@ namespace QuanLyThuVien
             }
             muonsach.MAPHIEUMUON = m_txtPMMaPhieuMuon.Text.ToUpper();
             if (MessageBox.Show("Bạn có muốn xóa không ?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.Cancel) return;
-            if (pm.DeleteDuLieuPhieuMuon(muonsach))
+            if (DataBase.PhieuMuon.DeleteDuLieuPhieuMuon(muonsach))
             {
+                maxmapm = "";
                 LoadDuLieuPhieuMuon();
                 MessageBox.Show("Thành công");
             }
@@ -277,7 +277,6 @@ namespace QuanLyThuVien
         }
         private void m_btnPMLuu_Click(object sender, EventArgs e)
         {
-            m_txtPMMaPhieuMuon.ReadOnly = false;
             if (m_txtPMMaPhieuMuon.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!!", "Thông báo");
@@ -290,8 +289,9 @@ namespace QuanLyThuVien
             muonsach.NGAYMUON = DateTime.Parse(m_dtpPMNgayMuon.Text);
             muonsach.NGAYTRA = DateTime.Parse(m_dtpPMNgayTra.Text);
             muonsach.GHICHU = m_rtbPMGhiChu.Text;
-            if (pm.InsertDuLieuPhieuMuónach(muonsach))
+            if (DataBase.PhieuMuon.InsertDuLieuPhieuMuónach(muonsach))
             {
+                maxmapm = "";
                 LoadDuLieuPhieuMuon();
                 m_btnPMLuu.Enabled = false;
                 MessageBox.Show("Thành công");
@@ -333,7 +333,7 @@ namespace QuanLyThuVien
                 quatrinhmuon.TIENPHAT = decimal.Parse(m_txtPTTienPhat.Text);
             quatrinhmuon.NGAYPHAT = DateTime.Parse(m_dtpPTNgayTra.Text);
             quatrinhmuon.GHICHU = "";
-            if (qtm.InsertDuLieuQuaTrinhMuon(quatrinhmuon))
+            if (DataBase.QuaTrinhMuon.InsertDuLieuQuaTrinhMuon(quatrinhmuon))
             {
                 LoadDuLieuQuaTrinhMuon();
                 LoadDuLieuPhieuMuon();
@@ -352,7 +352,7 @@ namespace QuanLyThuVien
             }
             quatrinhmuon.MAPHIEUMUON = m_txtPTMaPhieuMuon.Text;
             if (MessageBox.Show("Bạn có muốn xóa không ?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.Cancel) return;
-            if (qtm.DeleteDuLieuQuaTrinhMuon(quatrinhmuon))
+            if (DataBase.QuaTrinhMuon.DeleteDuLieuQuaTrinhMuon(quatrinhmuon))
             {
                 LoadDuLieuQuaTrinhMuon();
                 MessageBox.Show("Thành công", "Thông báo");
@@ -392,7 +392,7 @@ namespace QuanLyThuVien
             if (m_txtPTTienPhat.Text != "")
                 quatrinhmuon.TIENPHAT = decimal.Parse(m_txtPTTienPhat.Text);
             if (MessageBox.Show("Bạn có muốn sửa không ?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.Cancel) return;
-            if (qtm.UpdateDuLieuQuaTrinhMuon(quatrinhmuon))
+            if (DataBase.QuaTrinhMuon.UpdateDuLieuQuaTrinhMuon(quatrinhmuon))
             {
                 MessageBox.Show("Thành công", "Thông báo");
                 LoadDuLieuQuaTrinhMuon();
@@ -443,20 +443,20 @@ namespace QuanLyThuVien
         {
             m_txtPMHoTen.Text = "";
             if (m_txtPMDG.Text == "") return;
-            if (pm.LayTenDG(int.Parse(m_txtPMDG.Text)) != null)
-                m_txtPMHoTen.Text = pm.LayTenDG(int.Parse(m_txtPMDG.Text));
+            if (DataBase.PhieuMuon.LayTenDG(int.Parse(m_txtPMDG.Text)) != null)
+                m_txtPMHoTen.Text = DataBase.PhieuMuon.LayTenDG(int.Parse(m_txtPMDG.Text));
         }
         private void m_txtPMSach_TextChanged(object sender, EventArgs e)
         {
             m_txtPMTenSach.Text = "";
             if (m_txtPMSach.Text == "") return;
-            if (pm.LayTenSach(m_txtPMSach.Text) != null)
-                m_txtPMTenSach.Text = pm.LayTenSach(m_txtPMSach.Text);
+            if (DataBase.PhieuMuon.LayTenSach(m_txtPMSach.Text) != null)
+                m_txtPMTenSach.Text = DataBase.PhieuMuon.LayTenSach(m_txtPMSach.Text);
         }    
         private void m_txtPMMaPhieuMuon_TextChanged(object sender, EventArgs e)
         {
             muonsach.MAPHIEUMUON = m_txtPMMaPhieuMuon.Text;
-            if(pm.CheckMaPhieuMuon(muonsach))
+            if (DataBase.PhieuMuon.CheckMaPhieuMuon(muonsach))
             {
                 m_txtPMMaPhieuMuon.ForeColor = Color.Red;
                 return;
@@ -467,27 +467,27 @@ namespace QuanLyThuVien
         {
             DateTime tungay = DateTime.Parse(m_dtpPMTuNgay.Text);
             DateTime denngay = DateTime.Parse(m_dtpPMDenNgay.Text);
-            if (tungay.Day == denngay.Day || denngay < tungay||m_cbbPMSeachType.SelectedItem==null)
+            if (denngay < tungay||m_cbbPMSeachType.SelectedItem==null)
                 return;
 
             switch (m_cbbPMSeachType.SelectedItem.ToString())
             {
                 case "Mã phiếu mượn":
                     muonsach.MAPHIEUMUON = m_txtPMSeach.Text;
-                    m_dgvPM.DataSource = pm.TimKiemPhieuMuonTheoMaPM(muonsach, tungay, denngay,0);
+                    m_dgvPM.DataSource = DataBase.PhieuMuon.TimKiemPhieuMuonTheoMaPM(muonsach, tungay, denngay);
                     break;
 
                 case "Mã đọc giả":
                     if (m_txtPMSeach.Text != "")
                     {
                         muonsach.MADG = int.Parse(m_txtPMSeach.Text);
-                        m_dgvPM.DataSource = pm.TimKiemPhieuMuonTheoMaDG(muonsach, tungay, denngay,0);
+                        m_dgvPM.DataSource = DataBase.PhieuMuon.TimKiemPhieuMuonTheoMaDG(muonsach, tungay, denngay);
                     }
                     break;
 
                 case "Mã sách":
                     muonsach.MASACH = m_txtPMSeach.Text;
-                    m_dgvPM.DataSource = pm.TimKiemPhieuMuonTheoMaSach(muonsach, tungay, denngay,0);
+                    m_dgvPM.DataSource = DataBase.PhieuMuon.TimKiemPhieuMuonTheoMaSach(muonsach, tungay, denngay);
                     break;
                 default:
                     LoadDuLieuPhieuMuon();
@@ -522,31 +522,31 @@ namespace QuanLyThuVien
         {
             DateTime tungay = DateTime.Parse(m_dtpPTTuNgay.Text);
             DateTime denngay = DateTime.Parse(m_dtpPTDenNgay.Text);
-            if (tungay.Day == denngay.Day || denngay < tungay || m_cbbPTTypeSeach.SelectedItem == null)
+            if (denngay < tungay || m_cbbPTTypeSeach.SelectedItem == null)
                 return;
 
             switch (m_cbbPTTypeSeach.SelectedItem.ToString())
             {
                 case "Mã phiếu":
                     quatrinhmuon.MAPHIEUMUON = m_txtPTSeach.Text;
-                    m_dgvPT.DataSource = qtm.TimKiemQuaTrinhMuonTheoMaPhieu(quatrinhmuon, tungay, denngay);
+                    m_dgvPT.DataSource = DataBase.QuaTrinhMuon.TimKiemQuaTrinhMuonTheoMaPhieu(quatrinhmuon, tungay, denngay);
                     break;
 
                 case "Mã đọc giả":
                     if (m_txtPTSeach.Text != "")
                     {
                         quatrinhmuon.MADG = int.Parse(m_txtPTSeach.Text);
-                        m_dgvPT.DataSource = qtm.TimKiemQuaTrinhMuonTheoMaDG(quatrinhmuon, tungay, denngay);
+                        m_dgvPT.DataSource = DataBase.QuaTrinhMuon.TimKiemQuaTrinhMuonTheoMaDG(quatrinhmuon, tungay, denngay);
                     }
                     break;
 
                 case "Mã sách":
                     quatrinhmuon.MASACH = m_txtPTSeach.Text;
-                    m_dgvPT.DataSource = qtm.TimKiemQuaTrinhMuonTheoMaSach(quatrinhmuon, tungay, denngay);
+                    m_dgvPT.DataSource = DataBase.QuaTrinhMuon.TimKiemQuaTrinhMuonTheoMaSach(quatrinhmuon, tungay, denngay);
                     break;
 
                 case "Tên đọc giả":
-                    m_dgvPT.DataSource = qtm.TimKiemQuaTrinhMuonTheoTenDG(m_txtPTSeach.Text, tungay, denngay);
+                    m_dgvPT.DataSource = DataBase.QuaTrinhMuon.TimKiemQuaTrinhMuonTheoTenDG(m_txtPTSeach.Text, tungay, denngay);
                     break;
                 default:
                     LoadDuLieuPhieuMuon();
@@ -583,24 +583,24 @@ namespace QuanLyThuVien
             {
                 case "Mã đọc giả":
                     muonsach.MADG = int.Parse(m_txtKT.Text);
-                    m_dgvKT.DataSource = pm.TimKiemPhieuMuonTheoMaDG(muonsach, DateTime.Parse(m_dtpPMTuNgay.Text), DateTime.Parse(m_dtpPMTuNgay.Text), 1);
-                    m_txtKQ.Text = pm.SoSachtheoMaDG(int.Parse(m_txtKT.Text)).ToString();
+                    m_dgvKT.DataSource = DataBase.PhieuMuon.TimKiemPhieuMuonTheoMaDG(muonsach, DateTime.Parse(m_dtpPMTuNgay.Text), DateTime.Parse(m_dtpPMTuNgay.Text));
+                    m_txtKQ.Text = DataBase.PhieuMuon.SoSachtheoMaDG(int.Parse(m_txtKT.Text)).ToString();
                     break;
 
                 case "Tên đọc giả":
-                    m_dgvKT.DataSource = pm.TimKiemPhieuMuonTheoTenDG(m_txtKT.Text, DateTime.Parse(m_dtpPMTuNgay.Text), DateTime.Parse(m_dtpPMTuNgay.Text), 1);
-                    m_txtKQ.Text = pm.SoSachtheoTenDG(m_txtKT.Text);
+                    m_dgvKT.DataSource = DataBase.PhieuMuon.TimKiemPhieuMuonTheoTenDG(m_txtKT.Text, DateTime.Parse(m_dtpPMTuNgay.Text), DateTime.Parse(m_dtpPMTuNgay.Text));
+                    m_txtKQ.Text = DataBase.PhieuMuon.SoSachtheoTenDG(m_txtKT.Text);
                     break;
 
                 case "Mã tài liệu":
                     muonsach.MASACH = m_txtKT.Text;
-                    m_dgvKT.DataSource = pm.TimKiemPhieuMuonTheoMaSach(muonsach, DateTime.Parse(m_dtpPMTuNgay.Text), DateTime.Parse(m_dtpPMTuNgay.Text), 1);
-                    m_txtKQ.Text = pm.SoSachtheoMaSach(m_txtKT.Text);
+                    m_dgvKT.DataSource = DataBase.PhieuMuon.TimKiemPhieuMuonTheoMaSach(muonsach, DateTime.Parse(m_dtpPMTuNgay.Text), DateTime.Parse(m_dtpPMTuNgay.Text));
+                    m_txtKQ.Text = DataBase.PhieuMuon.SoSachtheoMaSach(m_txtKT.Text);
                     break;
 
                 case "Tên tài liệu":
-                    m_dgvKT.DataSource = pm.TimKiemPhieuMuonTheoTenSach(m_txtKT.Text);
-                    m_txtKQ.Text = pm.SoSachtheoTenSach(m_txtKT.Text);
+                    m_dgvKT.DataSource = DataBase.PhieuMuon.TimKiemPhieuMuonTheoTenSach(m_txtKT.Text);
+                    m_txtKQ.Text = DataBase.PhieuMuon.SoSachtheoTenSach(m_txtKT.Text);
                     break;
 
                 default:
@@ -640,7 +640,13 @@ namespace QuanLyThuVien
 
         private void m_btnClose_Click(object sender, EventArgs e)
         {
+            DeleteMaPMMax();
             this.Close();
+        }
+
+        private void DeleteMaPMMax()
+        {
+            DataBase.PhieuMuon.DeleteMaPMMax();
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -44,8 +44,10 @@
     <Compile Include="BaoCao_ThongKe_Bus.cs" />
     <Compile Include="ChuyenMuc_Bus.cs" />
     <Compile Include="DangKy_BUS.cs" />
+    <Compile Include="DataBase.cs" />
     <Compile Include="DocGia_BUS.cs" />
     <Compile Include="Login_BUS.cs" />
+    <Compile Include="NgonNgu_BUS.cs" />
     <Compile Include="NXB_BUS.cs" />
     <Compile Include="QuaTrinhMuon_Bus.cs" />
     <Compile Include="PhieuMuon_Bus.cs" />
@@ -55,6 +57,7 @@
     <Compile Include="TacGia_BUS.cs" />
     <Compile Include="TheLoai_BUS.cs" />
     <Compile Include="TraCuu_Bus.cs" />
+    <Compile Include="ViTri_BUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
