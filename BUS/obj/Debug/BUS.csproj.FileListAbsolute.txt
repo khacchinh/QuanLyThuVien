@@ -19,3 +19,10 @@ C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\BUS\bin\Debug\DAO.pdb
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\BUS\obj\Debug\BUS.dll
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\BUS\obj\Debug\BUS.pdb
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\BUS\bin\Debug\BUS.dll
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\BUS\bin\Debug\BUS.pdb
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\BUS\bin\Debug\DAO.dll
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\BUS\bin\Debug\DAO.pdb
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\BUS\obj\Debug\BUS.dll
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\BUS\obj\Debug\BUS.pdb

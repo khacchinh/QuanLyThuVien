@@ -782,34 +782,36 @@ namespace QuanLyThuVien
 
         private void m_btnThemTL_Click(object sender, EventArgs e)
         {
-            if (m_btnLuuTL.Enabled == true)
-            {
-                m_btnLuuTL.Enabled = false;
-                m_btnSuaTL.Enabled = true;
-                m_btnXoaTL.Enabled = true;
-                m_btnThemTL.Enabled = false;
-            }
-            else
-            {
-                MoDKTL();
+            if (m_btnLuuTL.Enabled == false)
+            {                
                 if (m_rbtnTL.Checked == true)
                 {
                     if (matlmax == "")
                         matlmax = DataBase.TheLoai.GetMaTLMax();
                     m_txtMaTheLoai.Text = matlmax;
                     m_txtTenTheLoai.Text = "";
+                    MoDKTL();
+                    m_btnLuuTL.Enabled = true;
+                    m_btnSuaTL.Enabled = false;
+                    m_btnXoaTL.Enabled = false;
+                    m_btnThemTL.Enabled = false;
                 }
-                else
+                if (m_rbtnCM.Checked == true)
                 {
-                    if(macmmax=="")
+                    if (macmmax == "")
                         macmmax = DataBase.ChuyenMuc.GetMaNXBMax();
                     m_txtCMMCM.Text = macmmax;
                     m_txtTenChuyenMuc.Text = "";
+                    MoDKTL();
+                    m_btnLuuTL.Enabled = true;
+                    m_btnSuaTL.Enabled = false;
+                    m_btnXoaTL.Enabled = false;
+                    m_btnThemTL.Enabled = false;
                 }
-                m_btnLuuTL.Enabled = true;
-                m_btnSuaTL.Enabled = false;
-                m_btnXoaTL.Enabled = false;
-                m_btnThemTL.Enabled = false;
+            }
+            else
+            {
+                KhoaDKTL();   
             }
 
         }
@@ -838,7 +840,7 @@ namespace QuanLyThuVien
                 else MessageBox.Show("Thất bại");
                 KhoaDKTL();
             }
-            else
+            if (m_rbtnCM.Checked == true)
             {
                 if (m_txtCMMCM.Text == "")
                 {
@@ -886,7 +888,7 @@ namespace QuanLyThuVien
                 }
                 else MessageBox.Show("Thất bại");
             }
-            else
+            if (m_rbtnCM.Checked == true)
             {
                 m_btnLuuTL.Enabled = false;
                 if (m_txtCMMCM.Text == "")
@@ -931,7 +933,7 @@ namespace QuanLyThuVien
                 m_txtMaTheLoai.Text = "";
                 m_txtTenTheLoai.Text = "";
             }
-            else
+            if (m_rbtnCM.Checked == true)
             {
                 if (m_txtCMMCM.Text == "")
                 {

@@ -16,3 +16,8 @@ C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\DAO\bin\Debug\DAO.pdb
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\DAO\obj\Debug\DAO.dll
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\DAO\obj\Debug\DAO.pdb
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\DAO\bin\Debug\DAO.dll.config
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\DAO\bin\Debug\DAO.dll
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\DAO\bin\Debug\DAO.pdb
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\DAO\obj\Debug\DAO.dll
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\DAO\obj\Debug\DAO.pdb

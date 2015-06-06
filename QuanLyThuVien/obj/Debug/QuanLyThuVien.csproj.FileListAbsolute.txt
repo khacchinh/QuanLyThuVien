@@ -64,3 +64,25 @@ C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmTraCuu.resources
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\bin\Debug\BUS.dll
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\bin\Debug\DAO.dll
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\bin\Debug\BUS.pdb
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\bin\Debug\DAO.pdb
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.ResolveComReference.cache
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmAbout.resources
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmBaoCao_ThongKe.resources
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmCapNhat.resources
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangKy.resources
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangNhap.resources
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmMain.resources
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLy.resources
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuiDinh.resources
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmTraCuu.resources
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
