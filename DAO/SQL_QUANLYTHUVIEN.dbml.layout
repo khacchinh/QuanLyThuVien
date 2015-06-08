@@ -146,14 +146,14 @@
         <classShapeMoniker Id="dc5d491d-b814-47b6-bcbb-322dd06cc15e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 5.43653746153846); (8.8125 : 4.87403746153846); (8.8125 : 5.09299967447917); (9 : 4.90549967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(8.25 : 5.43653746153846); (8.56607443490112 : 5.12046302663734 : JumpStart); (8.68392556509888 : 5.00261189643958 : JumpEnd); (8.8125 : 4.87403746153846); (8.8125 : 5.09299967447917); (9 : 4.90549967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SQL_QUANLYTHUVIENDataContext/DAUSACH/DAUSACH_MUONSACH" />
       <nodes>
         <classShapeMoniker Id="f11b49be-8708-4e20-856c-e0d6f7032861" />
         <classShapeMoniker Id="dc5d491d-b814-47b6-bcbb-322dd06cc15e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 9.09375); (6.21353666666667 : 9.09375 : JumpStart); (6.41145583333333 : 9.09375 : JumpEnd); (6.46875 : 9.09375); (6.46875 : 8.29970540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 9.09375); (6.21353666666667 : 9.09375 : JumpStart); (6.38020333333333 : 9.09375 : JumpEnd); (6.46875 : 9.09375); (6.46875 : 8.29970540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SQL_QUANLYTHUVIENDataContext/NGONNGU/NGONNGU_DAUSACH" />
       <nodes>
         <classShapeMoniker Id="c47c92f2-57b2-4ed0-a8f7-26309604a251" />
@@ -195,7 +195,7 @@
         <classShapeMoniker Id="4136a37b-3ca9-40b2-affc-250a5f149757" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 14.5857975260417); (6.24478916666667 : 14.5857975260417 : JumpStart); (6.41145583333333 : 14.5857975260417 : JumpEnd); (6.6093775 : 14.5857975260417); (6.6093775 : 8.29970540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 14.5857975260417); (6.6093775 : 14.5857975260417); (6.6093775 : 8.29970540364583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SQL_QUANLYTHUVIENDataContext/TACGIA/TACGIA_DAUSACH" />
       <nodes>
         <classShapeMoniker Id="f05eaa2e-dd5a-4c0c-8120-13d4073a6c27" />
