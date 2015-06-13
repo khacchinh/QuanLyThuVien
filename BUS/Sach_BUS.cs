@@ -96,7 +96,7 @@ namespace BUS
                 dausach.MALOAISACH = sach.MALOAISACH;
                 dausach.MANGONNGU = sach.MANGONNGU;
                 dausach.MAVITRI = sach.MAVITRI;
-                //dausach.SOLUONG = sach.SOLUONG;
+                dausach.SOLUONG = sach.SOLUONG;
                 dausach.SOTIEN = sach.SOTIEN;
                 dausach.SOTRANG = sach.SOTRANG;
                 dausach.MANXB = sach.MANXB;

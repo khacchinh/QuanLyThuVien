@@ -20,3 +20,4 @@ C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\DAO\bin\Debug\DAO.dll
 C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\DAO\bin\Debug\DAO.pdb
 C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\DAO\obj\Debug\DAO.dll
 C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\DAO\obj\Debug\DAO.pdb
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\DAO\obj\Debug\DAO.csprojResolveAssemblyReference.cache

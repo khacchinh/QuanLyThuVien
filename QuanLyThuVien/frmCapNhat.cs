@@ -289,6 +289,8 @@ namespace QuanLyThuVien
             m_txtEmailNXB.Enabled = false;
             m_txtWeb.Enabled = false;
             m_rtxtGhiChuNXB.Enabled = false;
+            
+
 
             m_btnThemNXB.Enabled = true;
             m_btnLuuNXB.Enabled = false;

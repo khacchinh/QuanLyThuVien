@@ -18,6 +18,7 @@ namespace BUS
         {
             try
             {
+                SQLDataContext.CreateDataContext();
                 nhanvien = SQLDataContext.SQLData.NHANVIENs.Where(nv => nv.MANV == id && nv.PASS == pass).FirstOrDefault();
                 if (nhanvien == null)
                     return false;
