@@ -30,12 +30,15 @@
         {
             this.m_tcBaocaoThongke = new System.Windows.Forms.TabControl();
             this.m_tpSach = new System.Windows.Forms.TabPage();
+            this.m_btnPrint = new System.Windows.Forms.Button();
             this.m_btnSachExcel = new System.Windows.Forms.Button();
             this.m_dgvSach = new System.Windows.Forms.DataGridView();
             this.m_tpTG = new System.Windows.Forms.TabPage();
+            this.m_btnTGPrint = new System.Windows.Forms.Button();
             this.m_btnTGExcel = new System.Windows.Forms.Button();
             this.m_dgvTacGia = new System.Windows.Forms.DataGridView();
             this.m_tbTheLoai = new System.Windows.Forms.TabPage();
+            this.m_btnTLPrint = new System.Windows.Forms.Button();
             this.m_btnTheLoaiExecl = new System.Windows.Forms.Button();
             this.m_dgvTheLoai = new System.Windows.Forms.DataGridView();
             this.m_tbNXB = new System.Windows.Forms.TabPage();
@@ -53,7 +56,8 @@
             this.m_tbTongHop = new System.Windows.Forms.TabPage();
             this.m_btnMin = new System.Windows.Forms.Button();
             this.m_btnClose = new System.Windows.Forms.Button();
-            this.m_btnPrint = new System.Windows.Forms.Button();
+            this.m_btnNXBPrint = new System.Windows.Forms.Button();
+            this.n_btnQuaHanPrint = new System.Windows.Forms.Button();
             this.m_tcBaocaoThongke.SuspendLayout();
             this.m_tpSach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.m_dgvSach)).BeginInit();
@@ -97,6 +101,21 @@
             this.m_tpSach.Text = "Sách";
             this.m_tpSach.UseVisualStyleBackColor = true;
             // 
+            // m_btnPrint
+            // 
+            this.m_btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(185)))), ((int)(((byte)(110)))));
+            this.m_btnPrint.FlatAppearance.BorderSize = 0;
+            this.m_btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_btnPrint.ForeColor = System.Drawing.Color.White;
+            this.m_btnPrint.Location = new System.Drawing.Point(602, 34);
+            this.m_btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_btnPrint.Name = "m_btnPrint";
+            this.m_btnPrint.Size = new System.Drawing.Size(139, 59);
+            this.m_btnPrint.TabIndex = 1;
+            this.m_btnPrint.Text = "Print";
+            this.m_btnPrint.UseVisualStyleBackColor = false;
+            this.m_btnPrint.Click += new System.EventHandler(this.m_btnPrint_Click);
+            // 
             // m_btnSachExcel
             // 
             this.m_btnSachExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(185)))), ((int)(((byte)(110)))));
@@ -128,6 +147,7 @@
             // 
             // m_tpTG
             // 
+            this.m_tpTG.Controls.Add(this.m_btnTGPrint);
             this.m_tpTG.Controls.Add(this.m_btnTGExcel);
             this.m_tpTG.Controls.Add(this.m_dgvTacGia);
             this.m_tpTG.Location = new System.Drawing.Point(4, 28);
@@ -138,6 +158,21 @@
             this.m_tpTG.TabIndex = 1;
             this.m_tpTG.Text = "Tác Giả";
             this.m_tpTG.UseVisualStyleBackColor = true;
+            // 
+            // m_btnTGPrint
+            // 
+            this.m_btnTGPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(185)))), ((int)(((byte)(110)))));
+            this.m_btnTGPrint.FlatAppearance.BorderSize = 0;
+            this.m_btnTGPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_btnTGPrint.ForeColor = System.Drawing.Color.White;
+            this.m_btnTGPrint.Location = new System.Drawing.Point(634, 39);
+            this.m_btnTGPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_btnTGPrint.Name = "m_btnTGPrint";
+            this.m_btnTGPrint.Size = new System.Drawing.Size(125, 50);
+            this.m_btnTGPrint.TabIndex = 3;
+            this.m_btnTGPrint.Text = "Print";
+            this.m_btnTGPrint.UseVisualStyleBackColor = false;
+            this.m_btnTGPrint.Click += new System.EventHandler(this.m_btnTGPrint_Click);
             // 
             // m_btnTGExcel
             // 
@@ -170,6 +205,7 @@
             // 
             // m_tbTheLoai
             // 
+            this.m_tbTheLoai.Controls.Add(this.m_btnTLPrint);
             this.m_tbTheLoai.Controls.Add(this.m_btnTheLoaiExecl);
             this.m_tbTheLoai.Controls.Add(this.m_dgvTheLoai);
             this.m_tbTheLoai.Location = new System.Drawing.Point(4, 28);
@@ -179,6 +215,21 @@
             this.m_tbTheLoai.TabIndex = 2;
             this.m_tbTheLoai.Text = "Thể Loại";
             this.m_tbTheLoai.UseVisualStyleBackColor = true;
+            // 
+            // m_btnTLPrint
+            // 
+            this.m_btnTLPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(185)))), ((int)(((byte)(110)))));
+            this.m_btnTLPrint.FlatAppearance.BorderSize = 0;
+            this.m_btnTLPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_btnTLPrint.ForeColor = System.Drawing.Color.White;
+            this.m_btnTLPrint.Location = new System.Drawing.Point(637, 31);
+            this.m_btnTLPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_btnTLPrint.Name = "m_btnTLPrint";
+            this.m_btnTLPrint.Size = new System.Drawing.Size(124, 49);
+            this.m_btnTLPrint.TabIndex = 1;
+            this.m_btnTLPrint.Text = "Print";
+            this.m_btnTLPrint.UseVisualStyleBackColor = false;
+            this.m_btnTLPrint.Click += new System.EventHandler(this.m_btnTLPrint_Click);
             // 
             // m_btnTheLoaiExecl
             // 
@@ -211,6 +262,7 @@
             // 
             // m_tbNXB
             // 
+            this.m_tbNXB.Controls.Add(this.m_btnNXBPrint);
             this.m_tbNXB.Controls.Add(this.m_btnNXBExcel);
             this.m_tbNXB.Controls.Add(this.m_dgvNXB);
             this.m_tbNXB.Location = new System.Drawing.Point(4, 28);
@@ -254,6 +306,7 @@
             // 
             this.m_tpBGQuaHan.Controls.Add(this.m_drpQHDenNgay);
             this.m_tpBGQuaHan.Controls.Add(this.m_dtpQHTuNgay);
+            this.m_tpBGQuaHan.Controls.Add(this.n_btnQuaHanPrint);
             this.m_tpBGQuaHan.Controls.Add(this.m_btnQHExcel);
             this.m_tpBGQuaHan.Controls.Add(this.label5);
             this.m_tpBGQuaHan.Controls.Add(this.m_cbbType);
@@ -381,7 +434,7 @@
             this.m_btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_btnMin.Image = global::QuanLyThuVien.Properties.Resources.Minimize;
             this.m_btnMin.Location = new System.Drawing.Point(940, 15);
-            this.m_btnMin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.m_btnMin.Margin = new System.Windows.Forms.Padding(4);
             this.m_btnMin.Name = "m_btnMin";
             this.m_btnMin.Size = new System.Drawing.Size(57, 28);
             this.m_btnMin.TabIndex = 6;
@@ -395,27 +448,42 @@
             this.m_btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.m_btnClose.Image = global::QuanLyThuVien.Properties.Resources.close;
             this.m_btnClose.Location = new System.Drawing.Point(1005, 15);
-            this.m_btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.m_btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.m_btnClose.Name = "m_btnClose";
             this.m_btnClose.Size = new System.Drawing.Size(57, 28);
             this.m_btnClose.TabIndex = 5;
             this.m_btnClose.UseVisualStyleBackColor = false;
             this.m_btnClose.Click += new System.EventHandler(this.m_btnClose_Click);
             // 
-            // m_btnPrint
+            // m_btnNXBPrint
             // 
-            this.m_btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(185)))), ((int)(((byte)(110)))));
-            this.m_btnPrint.FlatAppearance.BorderSize = 0;
-            this.m_btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.m_btnPrint.ForeColor = System.Drawing.Color.White;
-            this.m_btnPrint.Location = new System.Drawing.Point(602, 34);
-            this.m_btnPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.m_btnPrint.Name = "m_btnPrint";
-            this.m_btnPrint.Size = new System.Drawing.Size(139, 59);
-            this.m_btnPrint.TabIndex = 1;
-            this.m_btnPrint.Text = "Print";
-            this.m_btnPrint.UseVisualStyleBackColor = false;
-            this.m_btnPrint.Click += new System.EventHandler(this.m_btnSachExcel_Click);
+            this.m_btnNXBPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(185)))), ((int)(((byte)(110)))));
+            this.m_btnNXBPrint.FlatAppearance.BorderSize = 0;
+            this.m_btnNXBPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.m_btnNXBPrint.ForeColor = System.Drawing.Color.White;
+            this.m_btnNXBPrint.Location = new System.Drawing.Point(606, 44);
+            this.m_btnNXBPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.m_btnNXBPrint.Name = "m_btnNXBPrint";
+            this.m_btnNXBPrint.Size = new System.Drawing.Size(135, 54);
+            this.m_btnNXBPrint.TabIndex = 1;
+            this.m_btnNXBPrint.Text = "Print";
+            this.m_btnNXBPrint.UseVisualStyleBackColor = false;
+            this.m_btnNXBPrint.Click += new System.EventHandler(this.m_btnNXBPrint_Click);
+            // 
+            // n_btnQuaHanPrint
+            // 
+            this.n_btnQuaHanPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(185)))), ((int)(((byte)(110)))));
+            this.n_btnQuaHanPrint.FlatAppearance.BorderSize = 0;
+            this.n_btnQuaHanPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.n_btnQuaHanPrint.ForeColor = System.Drawing.Color.White;
+            this.n_btnQuaHanPrint.Location = new System.Drawing.Point(793, 100);
+            this.n_btnQuaHanPrint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.n_btnQuaHanPrint.Name = "n_btnQuaHanPrint";
+            this.n_btnQuaHanPrint.Size = new System.Drawing.Size(133, 49);
+            this.n_btnQuaHanPrint.TabIndex = 3;
+            this.n_btnQuaHanPrint.Text = "Print";
+            this.n_btnQuaHanPrint.UseVisualStyleBackColor = false;
+            this.n_btnQuaHanPrint.Click += new System.EventHandler(this.n_btnQuaHanPrint_Click);
             // 
             // frmBaoCao_ThongKe
             // 
@@ -477,5 +545,9 @@
         private System.Windows.Forms.Button m_btnMin;
         private System.Windows.Forms.Button m_btnClose;
         private System.Windows.Forms.Button m_btnPrint;
+        private System.Windows.Forms.Button m_btnTGPrint;
+        private System.Windows.Forms.Button m_btnTLPrint;
+        private System.Windows.Forms.Button m_btnNXBPrint;
+        private System.Windows.Forms.Button n_btnQuaHanPrint;
     }
 }

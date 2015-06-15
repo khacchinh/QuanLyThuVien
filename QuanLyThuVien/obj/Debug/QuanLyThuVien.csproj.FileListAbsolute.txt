@@ -1,24 +1,3 @@
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmAbout.resources
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmBaoCao_ThongKe.resources
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmCapNhat.resources
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangNhap.resources
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmMain.resources
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLy.resources
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmTraCuu.resources
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\BUS.dll
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\DAO.dll
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\BUS.pdb
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\DAO.pdb
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuiDinh.resources
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.ResolveComReference.cache
 E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
 E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.ResolveComReference.cache
 E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
@@ -41,7 +20,6 @@ E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\obj\Debug\
 E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmTraCuu.resources
 E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
 E:\Visual Studio 2012\quanlythuvien\sdcsd\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache
-E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangKy.resources
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.ResolveComReference.cache
 C:\Users\Administrator PC\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
@@ -86,3 +64,26 @@ C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVie
 C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache
 C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
 C:\Users\VMQ\Documents\GitHub\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe.config
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.exe
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\QuanLyThuVien.pdb
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\BUS.dll
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\DAO.dll
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\BUS.pdb
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\bin\Debug\DAO.pdb
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csprojResolveAssemblyReference.cache
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.ResolveComReference.cache
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmReport.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmAbout.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmBaoCao_ThongKe.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmCapNhat.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangKy.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmDangNhap.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmMain.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuanLy.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmQuiDinh.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.frmTraCuu.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.Properties.Resources.resources
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.csproj.GenerateResource.Cache
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.exe
+E:\Visual Studio 2012\quanlythuvien\QuanLyThuVien\QuanLyThuVien\obj\Debug\QuanLyThuVien.pdb

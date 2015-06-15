@@ -58,7 +58,7 @@ namespace BUS
             dt.Columns.Add("TENSACH", typeof(string));
             dt.Columns.Add("TENTG", typeof(string));
             dt.Columns.Add("TENNXB", typeof(string));
-            dt.Columns.Add("THELOAI", typeof(string));
+            dt.Columns.Add("TENLOAI", typeof(string));
             dt.Columns.Add("SOTRANG", typeof(string));
             dt.Columns.Add("TENNGONNGU", typeof(string));
             dt.Columns.Add("SOTIEN", typeof(string));
@@ -81,7 +81,7 @@ namespace BUS
                 r["TENSACH"] = i.TENSACH;
                 r["TENTG"] = i.TENTG;
                 r["TENNXB"] = i.TENNXB;
-                r["THELOAI"] = i.TENLOAI;
+                r["TENLOAI"] = i.TENLOAI;
                 r["SOTRANG"] = i.SOTRANG;
                 r["SOLUONG"] = i.SOLUONG;
                 r["TENNGONNGU"] = i.TENNGONNGU;

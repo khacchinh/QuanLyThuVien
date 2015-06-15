@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace QuanLyThuVien
 {
@@ -149,6 +150,7 @@ namespace QuanLyThuVien
         private void m_btnSachExcel_Click(object sender, EventArgs e)
         {
             PrintData(m_dgvSach);
+            
         }
 
         private void m_btnTGExcel_Click(object sender, EventArgs e)
@@ -189,6 +191,36 @@ namespace QuanLyThuVien
         private void m_btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void m_btnPrint_Click(object sender, EventArgs e)
+        {
+            frmReport frm = new frmReport(m_dgvSach, 0);
+            frm.Show();
+        }
+
+        private void m_btnTGPrint_Click(object sender, EventArgs e)
+        {
+            frmReport frm = new frmReport(m_dgvTacGia, 1);
+            frm.Show();
+        }
+
+        private void m_btnTLPrint_Click(object sender, EventArgs e)
+        {
+            frmReport frm = new frmReport(m_dgvTheLoai, 2);
+            frm.Show();
+        }
+
+        private void m_btnNXBPrint_Click(object sender, EventArgs e)
+        {
+            frmReport frm = new frmReport(m_dgvNXB, 3);
+            frm.Show();
+        }
+
+        private void n_btnQuaHanPrint_Click(object sender, EventArgs e)
+        {
+            frmReport frm = new frmReport(m_dgvQuaHan, 4);
+            frm.Show();
         }
 
         
